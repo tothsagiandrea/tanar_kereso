@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="650" height="650" viewBox="0 0 650 650">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#radial-gradient);
+        filter: url(#filter);
+      }
+
+      .cls-3 {
+        fill-rule: evenodd;
+        fill: url(#radial-gradient-2);
+        filter: url(#filter-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="325" y1="650" x2="325" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6fa4ee"/>
+      <stop offset="1" stop-color="#9ec2f5"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient" cx="325" cy="325" r="325" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3c2372"/>
+      <stop offset="1" stop-color="#735aa8"/>
+    </radialGradient>
+    <filter id="filter" x="122" y="32" width="408" height="408" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="9"/>
+      <feFlood result="flood" flood-opacity="0.39"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <radialGradient id="radial-gradient-2" cx="325" cy="325" r="325" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2f1465"/>
+      <stop offset="1" stop-color="#735aa8"/>
+    </radialGradient>
+    <filter id="filter-2" x="-22" y="302" width="695" height="429" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="9"/>
+      <feFlood result="flood" flood-opacity="0.39"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect id="Background" class="cls-1" width="650" height="650"/>
+  <circle id="Head" class="cls-2" cx="325.5" cy="235.5" r="122.875"/>
+  <path id="Body" class="cls-3" d="M592,649.77c0-147.46-119.54-267-267-267S58,502.31,58,649.77H592Z"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="260" height="260" viewBox="0 0 260 260">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="130" y1="260" x2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#265c99"/>
+      <stop offset="1" stop-color="#5e99dd"/>
+    </linearGradient>
+  </defs>
+  <rect id="Background" class="cls-1" width="260" height="260"/>
+  <path id="Graduation_Cap" data-name="Graduation Cap" class="cls-2" d="M130,136c41.974,0,76,5.6,76,12.5S171.974,161,130,161s-76-5.6-76-12.5S88.026,136,130,136Zm76-.5c0-6.9-34.026-12.5-76-12.5s-76,5.6-76,12.5v-29C54,99.6,88.026,94,130,94s76,5.6,76,12.5v29ZM27,232s-15-11.161-15-27,9-16,9-16,0.307-73.245.307-75.6C13.122,109.184,6,105,6,105s-9.515-4.836,0-10S124.646,33,130,33h0c5.354,0,114.485,56.836,124,62s0,10,0,10l-33,17s0.2-13.966.2-22.25-40.832-15-91.2-15-91.2,6.716-91.2,15S39,122,39,122l-5.995-3.088C33.005,122.336,33,189,33,189s9,0.161,9,16-15,27-15,27h0Z"/>
+</svg>
