@@ -41,6 +41,10 @@ class RouteController extends Controller
         return view('registration', ['user_groups' => $user_groups]);
     }
 
+    public function showTeacherDataPage () : View {
+        return view('teacherdata');
+    }
+
     public function showTeacherPage () : View {
         return view('teacher');
     }

@@ -23,3 +23,4 @@ Route::post('/login', [RouteController::class, 'loginUser'])->name('loginUser');
 Route::get('/register', [RouteController::class, 'showRegistration'])->name('registrationPage');
 Route::post('/register', [RouteController::class, 'registerUser'])->name('registerUser');
 Route::get('/teacher', [RouteController::class, 'showTeacherPage'])->name('teacherPage');
+Route::get('/teacherdata', [RouteController::class, 'showTeacherDataPage'])->name('teacherDataPage');

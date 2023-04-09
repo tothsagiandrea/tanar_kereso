@@ -43,8 +43,89 @@
 					</div>
 					<div class="details">
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
-						<a href="{{route('teacherPage')}}">További információ</a>
 					</div>
+					<a href="{{route('teacherPage')}}">Tanár saját oldala</a>
+					<a href="{{route('teacherDataPage')}}">További információ</a>
+				</div>
+			</a>
+			<a href="#" title="Részletekért kattints a névjegykártyára.">
+				<div class="teacher-card">
+					<div class="top-strip">
+						<h2>Gipsz Jakab</h2>
+						<h3>számítástechnika, programozás</h3>
+					</div>
+					<div class="avatar">
+						<img src="{{ asset('img/user.svg')}}" alt="Gipsz Jakab">
+					</div>
+					<div class="details">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
+					</div>
+					<a href="{{route('teacherPage')}}">Tanár saját oldala</a>
+					<a href="{{route('teacherDataPage')}}">További információ</a>
+				</div>
+			</a>
+			<a href="#" title="Részletekért kattints a névjegykártyára.">
+				<div class="teacher-card">
+					<div class="top-strip">
+						<h2>Gipsz Jakab</h2>
+						<h3>számítástechnika, programozás</h3>
+					</div>
+					<div class="avatar">
+						<img src="{{ asset('img/user.svg')}}" alt="Gipsz Jakab">
+					</div>
+					<div class="details">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
+					</div>
+					<a href="{{route('teacherPage')}}">Tanár saját oldala</a>
+					<a href="{{route('teacherDataPage')}}">További információ</a>
+				</div>
+			</a>
+			<a href="#" title="Részletekért kattints a névjegykártyára.">
+				<div class="teacher-card">
+					<div class="top-strip">
+						<h2>Gipsz Jakab</h2>
+						<h3>számítástechnika, programozás</h3>
+					</div>
+					<div class="avatar">
+						<img src="{{ asset('img/user.svg')}}" alt="Gipsz Jakab">
+					</div>
+					<div class="details">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
+					</div>
+					<a href="{{route('teacherPage')}}">Tanár saját oldala</a>
+					<a href="{{route('teacherDataPage')}}">További információ</a>
+				</div>
+			</a>
+			<a href="#" title="Részletekért kattints a névjegykártyára.">
+				<div class="teacher-card">
+					<div class="top-strip">
+						<h2>Gipsz Jakab</h2>
+						<h3>számítástechnika, programozás</h3>
+					</div>
+					<div class="avatar">
+						<img src="{{ asset('img/user.svg')}}" alt="Gipsz Jakab">
+					</div>
+					<div class="details">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
+					</div>
+					<a href="{{route('teacherPage')}}">Tanár saját oldala</a>
+					<a href="{{route('teacherDataPage')}}">További információ</a>
+				</div>
+			</a>
+			<a href="#" title="Részletekért kattints a névjegykártyára.">
+				<div class="teacher-card">
+					<div class="top-strip">
+						<h2>Gipsz Jakab</h2>
+						<h3>számítástechnika, programozás</h3>
+					</div>
+					<div class="avatar">
+						<img src="{{ asset('img/user.svg')}}" alt="Gipsz Jakab">
+					</div>
+					<div class="details">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
+					</div>
+					<a href="{{route('teacherPage')}}">Tanár saját oldala</a>
+					<a href="{{route('teacherDataPage')}}">További információ</a>
 				</div>
 			</a>
 		</div>

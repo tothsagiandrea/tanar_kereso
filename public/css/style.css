@@ -92,7 +92,7 @@ img.header-image {
     width: 500px;
     height: 600px;
     border: thin solid black;
-    border-radius: 15px;
+    border-radius: 25px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
     background-color:#2d1e78;
     background: url('../img/regablak.png');
@@ -124,12 +124,24 @@ img.header-image {
 
 .login-form input[type="submit"], .gomb {
     padding: 1em 3em;
+    padding-right: 40px;
     background-color: rgb(6, 81, 119);
     color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     border: 3px solid rgb(7, 157, 177);
     text-transform: uppercase;
     border-radius: 15px;
+    margin: 20px;
+    margin-left: 160px;
+}
+.gomb
+{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0.3em;
+    margin-top: 40px;
+    margin-left: 160px;
+    
 }
 
 #logolablec {
@@ -366,4 +378,5 @@ h2 {
 .teachdata{
     min-width: 350px;
     max-width: 750px;
+    background-color: #9489c995;
 }
