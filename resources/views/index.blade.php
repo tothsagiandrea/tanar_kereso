@@ -44,7 +44,7 @@
 					<div class="details">
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
 					</div>
-					<a href="{{route('teacherPage')}}">Tanár saját oldala</a>
+					<a href="{{route('teacherPage')}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
 					<a href="{{route('teacherDataPage')}}">További információ</a>
 				</div>
 			</a>
@@ -60,7 +60,7 @@
 					<div class="details">
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
 					</div>
-					<a href="{{route('teacherPage')}}">Tanár saját oldala</a>
+					<a href="{{route('teacherPage')}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
 					<a href="{{route('teacherDataPage')}}">További információ</a>
 				</div>
 			</a>
@@ -76,7 +76,7 @@
 					<div class="details">
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
 					</div>
-					<a href="{{route('teacherPage')}}">Tanár saját oldala</a>
+					<a href="{{route('teacherPage')}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
 					<a href="{{route('teacherDataPage')}}">További információ</a>
 				</div>
 			</a>
@@ -92,7 +92,7 @@
 					<div class="details">
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
 					</div>
-					<a href="{{route('teacherPage')}}">Tanár saját oldala</a>
+					<a href="{{route('teacherPage')}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
 					<a href="{{route('teacherDataPage')}}">További információ</a>
 				</div>
 			</a>
@@ -108,7 +108,7 @@
 					<div class="details">
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
 					</div>
-					<a href="{{route('teacherPage')}}">Tanár saját oldala</a>
+					<a href="{{route('teacherPage')}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
 					<a href="{{route('teacherDataPage')}}">További információ</a>
 				</div>
 			</a>
@@ -124,7 +124,7 @@
 					<div class="details">
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
 					</div>
-					<a href="{{route('teacherPage')}}">Tanár saját oldala</a>
+					<a href="{{route('teacherPage')}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
 					<a href="{{route('teacherDataPage')}}">További információ</a>
 				</div>
 			</a>

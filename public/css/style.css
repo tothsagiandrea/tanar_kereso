@@ -196,6 +196,7 @@ h2 {
     background-color: rgba(148, 187, 185, 0.133);
     margin: 1em;
     border: 1px dotted gray;
+    border-radius: 15px;
   }
 
 .flex-item-right a {
@@ -204,16 +205,18 @@ h2 {
 }
 
 .flex-item-right a:link, .flex-item-right a:visited {
-    color: green;
+    color: rgb(22, 8, 82);
 }
 
 .flex-item-right a:hover, .flex-item-right a:active {
-    background-color: lightgreen;
+    background-color: rgb(144, 199, 238);
+    border-radius: 5px;
 }
 .infolink
 {
-    background-color: #064c4fa6;
+    background-color: #258ae9a6;
     text-align: center;
+    border-radius: 15px;
 }
 
 
@@ -380,3 +383,119 @@ h2 {
     max-width: 750px;
     background-color: #9489c995;
 }
+.bn632-hover {
+    width: 160px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 35px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:focus {
+    outline: none;
+  }
+  
+  .bn632-hover.bn22 {
+    background-image: linear-gradient(
+      to right,
+      #315b79,
+      #416894,
+      #639bc4,
+      #4da6ca
+    );
+    box-shadow: 0 4px 15px 0 rgba(23, 125, 168, 0.75);
+  }
+  /*blog*/
+  * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+    padding: 30px;
+    font-size: 100px;
+    text-align: center;
+    background: rgba(29, 145, 204, 0.426);
+    border-radius: 15px;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {
+    float: left;
+    width: 75%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    border-radius: 10px;
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+    background-color: rgba(29, 145, 204, 0.426);
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Footer */
+  .footer {
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  #blogcard1
+  {
+    border-radius: 15px;
+  }
