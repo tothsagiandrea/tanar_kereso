@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\UserGroup;
 
@@ -34,6 +35,10 @@ class RouteController extends Controller
     public function showLogin () : View {
         return view('login');
     }
+
+    public function showForgottenPasswordPage () : View {
+        return view('forgottenpassword');
+    }
     
     public function showRegistration () : View {
         $user_groups = UserGroup::where('selectable', 1)
@@ -58,5 +63,28 @@ class RouteController extends Controller
         $user->password = Hash::make($request->password);
 
         $user->save();
+    }
+
+    public function loginUser(Request $request) {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+ 
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('indexPage');
+        }
+ 
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
+    }
+
+    public function logoutUser(Request $request) {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
     }
 }

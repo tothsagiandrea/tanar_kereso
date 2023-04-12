@@ -20,7 +20,9 @@ Route::get('/services', [RouteController::class, 'showServices'])->name('service
 Route::get('/forum', [RouteController::class, 'showForum'])->name('forumPage');
 Route::get('/login', [RouteController::class, 'showLogin'])->name('loginPage');
 Route::post('/login', [RouteController::class, 'loginUser'])->name('loginUser');
+Route::get('/forgotten_password', [RouteController::class, 'showForgottenPasswordPage'])->name('passwordPage');
 Route::get('/register', [RouteController::class, 'showRegistration'])->name('registrationPage');
 Route::post('/register', [RouteController::class, 'registerUser'])->name('registerUser');
 Route::get('/teacher', [RouteController::class, 'showTeacherPage'])->name('teacherPage');
 Route::get('/teacherdata', [RouteController::class, 'showTeacherDataPage'])->name('teacherDataPage');
+Route::get('/logout', [RouteController::class, 'logoutUser'])->name('logoutUser');
