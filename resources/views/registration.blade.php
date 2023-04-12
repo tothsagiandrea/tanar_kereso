@@ -11,6 +11,19 @@
 	@csrf
 		<div class="row">
 			<div class="col-3 mt-1 mb-1">
+			</div>
+			<div class="col-9 mt-1 mb-1 messages">	
+				@if (session('status') && session('status') == "success")
+					Sikeres regisztráció!
+				@elseif((session('status') && session('status') == "fail") || $errors->any())
+					Hiba történt a regisztráció közben!
+				@else
+					Minden mező kitöltése kötelező!
+				@endif
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3 mt-1 mb-1">
 	  			<label for="email">E-mail cím:</label>
 			</div>
 			<div class="col-9 mt-1 mb-1">
