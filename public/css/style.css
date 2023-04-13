@@ -378,10 +378,37 @@ h2 {
 @media screen and (max-width: 1600px) {
 }
 /*teacher.blade*/
+.teachPage{
+    min-width: 350px;
+    max-width: 750px;
+    background-color: #f3f2f895;
+}
 .teachdata{
     min-width: 350px;
     max-width: 750px;
+    min-height: 350px;
+    max-width: 750px;
     background-color: #9489c995;
+}
+.sablontanaroknak
+{
+    
+    border-color: #2d1e78;
+    
+    
+}
+.nev
+{
+    color: #2b0f62;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 30px;
+}
+.fototanar
+{
+    max-width: 100px;
+    max-height: 100px;
 }
 .bn632-hover {
     width: 160px;
