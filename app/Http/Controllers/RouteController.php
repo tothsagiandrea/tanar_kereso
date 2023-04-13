@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\UserGroup;
+use App\Models\Teacher;
 
 use App\Http\Requests\UserRequest;
 
@@ -62,7 +63,11 @@ class RouteController extends Controller
         $user->user_group = $request->role;
         $user->password = Hash::make($request->password);
 
-        $user->save();
+        if ($user->save()) {
+            return redirect()->back()->with('status', 'success');
+        } else {
+            return redirect()->back()->with('status', 'fail');
+        }
     }
 
     public function loginUser(Request $request) {
@@ -73,12 +78,20 @@ class RouteController extends Controller
  
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('indexPage');
+            $user = auth()->user();
+            $email = $user->email;
+            $user_group = $user->user_group;
+            $teacher_user_group = UserGroup::where('name', 'tanár')->get('id');
+            if ($teacher_user_group[0]->id == $user_group) {
+                $teacher = Teacher::where('email', $email)->get();
+                if (count($teacher) == 0) {
+                    return view('teacherdata', ['status' => 'missing_data']);
+                }
+            }
+            return redirect()->intended('/');
         }
- 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+
+        return redirect()->back()->with('status', 'fail');
     }
 
     public function logoutUser(Request $request) {
