@@ -29,8 +29,10 @@
                                 <a class="nav-link" href="{{route('servicesPage')}}">Információk</a>
                                 <a class="nav-link" href="{{route('contactsPage')}}">Kapcsolat</a>
                                 <a class="nav-link" href="{{route('forumPage')}}">Fórum</a>
+                                @guest
                                 <a class="nav-link" href="{{route('loginPage')}}">Bejelentkezés</a>
                                 <a class="nav-link" href="{{route('registrationPage')}}">Regisztráció</a>
+                                @endguest
                             </div>        
                         </div>
                         <form class="d-flex" role="search">

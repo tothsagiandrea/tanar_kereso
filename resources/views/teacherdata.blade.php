@@ -3,12 +3,13 @@
 @section('content')
 <h1>Személyes adatok</h1>
 <div class="container-fluid teachdata">
-	@if ($status == "missing_data")
+	@if(session("status") && (session("status") == "missing_data"))
 	<div>
 		Minden mező kitöltendő!
 	</div>
 	@endif
-	<form>
+	<form method="post" action="{{ route('setTeacherData') }}">
+		@csrf
 		<div class="row">
 			<div class="col">
 				<label for="exampleFormControlInput1">Teljes név</label>
@@ -25,7 +26,7 @@
 		</div>
 		<div class="form-group">
 			<label for="exampleFormControlSelect1">Oktatás módja</label>
-			<select class="form-control" id="exampleFormControlSelect1">
+			<select multiple class="form-control" id="exampleFormControlSelect1">
 				<option>Online</option>
 				<option>Saját helyszín</option>
 				<option>Megbeszélt helyszín</option>
@@ -33,7 +34,7 @@
 		</div>
 		<div class="form-group">
 			<label for="exampleFormControlSelect1">Válassza ki a preferált várost/kerületet</label>
-			<select class="form-control" id="exampleFormControlSelect1">
+			<select multiple class="form-control" id="exampleFormControlSelect1">
 				<option>Budapest</option>
 				<option>kerület</option>
 				<option>egyéb</option>
@@ -41,7 +42,7 @@
 		</div>
 		<div class="form-group">
 			<label for="exampleFormControlSelect1">Mely tantárgyakat szeretné tanítani?</label>
-			<select class="form-control" id="exampleFormControlSelect1">
+			<select multiple class="form-control" id="exampleFormControlSelect1">
 				<option>Matematika</option>
 				<option>Fizika</option>
 				<option>Irodalom</option>
@@ -81,6 +82,10 @@
 			<label class="form-check-label" for="defaultCheck1">
 				Elolvastam és elfogadom az adatvédelmi szabályzatot.
 			</label>
+		</div>
+		<div class="col">
+			<input type="reset" name="btn_delete" value="Törlés">
+			<input type="submit" name="btn_submit" value="Mentés">
 		</div>
 	</form>
 
