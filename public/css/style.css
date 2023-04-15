@@ -387,7 +387,7 @@ h2 {
 /*teacher.blade*/
 .teachPage{
     min-width: 350px;
-    max-width: 800px;
+    max-width: 1200px;
     background-color: #f3f2f895;
 }
 .teachdata{
@@ -404,7 +404,8 @@ h2 {
 }
 .sablontanaroknak
 {
-    
+    min-width: 350px;
+    max-width: 1200px;
     border-color: #2d1e78;
     
     
@@ -422,6 +423,8 @@ h2 {
     max-width: 100px;
     max-height: 100px;
 }
+
+
 
 .bn632-hover {
     width: 160px;
@@ -463,6 +466,7 @@ h2 {
     );
     box-shadow: 0 4px 15px 0 rgba(23, 125, 168, 0.75);
   }
+
   /*blog*/
   * {
   box-sizing: border-box;
