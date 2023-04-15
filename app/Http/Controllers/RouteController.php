@@ -11,6 +11,8 @@ use App\Models\UserGroup;
 use App\Models\Teacher;
 
 use App\Http\Requests\UserRequest;
+use Illuminate\Support\Facades\Redirect;
+use Psy\Readline\Hoa\Console;
 
 /**
  * Summary of RouteController
@@ -51,6 +53,10 @@ class RouteController extends Controller
         return view('teacherdata');
     }
 
+    public function setTeacherData(Request $request) {
+        dd($request);
+    }
+
     public function showTeacherPage () : View {
         return view('teacher');
     }
@@ -80,12 +86,15 @@ class RouteController extends Controller
             $request->session()->regenerate();
             $user = auth()->user();
             $email = $user->email;
+            $name = $user->name;
             $user_group = $user->user_group;
             $teacher_user_group = UserGroup::where('name', 'tanár')->get('id');
             if ($teacher_user_group[0]->id == $user_group) {
                 $teacher = Teacher::where('email', $email)->get();
                 if (count($teacher) == 0) {
-                    return view('teacherdata', ['status' => 'missing_data']);
+                    Redirect::to('/teacherdata');
+                    return view('teacherdata');
+                    //return redirect('/teacherdata')->with('status', 'missing_data')->with('email', $email)->with('name', $name);
                 }
             }
             return redirect()->intended('/');
