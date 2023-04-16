@@ -38,11 +38,13 @@
                         <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Keresés..." aria-label="Keresés">
                             <button class="btn btn-outline-light" type="submit">Keresés</button>
-                            @auth
+                        </form>
+                        @auth
+                        <div class="user-menu">
                             <button class="btn btn-outline-light" type="button">Profilom</button> 
                             <a class="btn btn-outline-light" href="{{route('logoutUser')}}">Kilépés</a> 
-                            @endauth
-                        </form>
+                        </div>
+                        @endauth
                     </nav>
                 </div>
                 <div class="content-container">

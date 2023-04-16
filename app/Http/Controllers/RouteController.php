@@ -81,7 +81,8 @@ class RouteController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
- 
+        
+        // Authenticating user
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             $user = auth()->user();
@@ -94,7 +95,6 @@ class RouteController extends Controller
                 if (count($teacher) == 0) {
                     Redirect::to('/teacherdata');
                     return view('teacherdata');
-                    //return redirect('/teacherdata')->with('status', 'missing_data')->with('email', $email)->with('name', $name);
                 }
             }
             return redirect()->intended('/');
