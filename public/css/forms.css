@@ -84,3 +84,26 @@
 option[value=""][disabled] {
     display: none;
   }
+
+  
+
+@media screen and (max-width: 375px) {
+    .login-main-container, .registration-container {
+        width: 97%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 1366px) {
+}
+
+@media screen and (max-width: 1600px) {
+}
