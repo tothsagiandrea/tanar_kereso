@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('styles')
+<link rel="stylesheet" href="{{asset('css/forms.css')}}">
+@endsection
+
 @section('content')
 	<div class="login-main-container">
 		<div class="input-container">
@@ -8,10 +12,17 @@
 				<div class="form-title">Belépés</div>
 				<input type="email" placeholder="E-mail cím" name="email">
 				<input type="password" placeholder="Jelszó" name="password">
-				<input type="checkbox" name="rememberme"><label for="rememberme">Emlékezzen rám</label>
-				<a href="{{route('passwordPage')}}">Elfelejtettem a jelszavam</a>
-				<input type="submit" value="Belépés">
-				<a class="gomb center" href="{{route('registrationPage')}}">Regisztráció</a>
+				<div class="row">
+					<input type="checkbox" name="rememberme" id="rememberme">
+					<label for="rememberme">Emlékezzen rám</label>
+				</div>
+				<div class="row">
+					<a href="{{route('passwordPage')}}">Elfelejtettem a jelszavam</a>
+				</div>
+				<div class="row">
+					<input class="bn632-hover bn22" type="submit" value="Belépés">
+					<a class="bn632-hover bn22" href="{{route('registrationPage')}}">Regisztráció</a>
+				</div>
 			</form>
 		</div>
 	</div>
