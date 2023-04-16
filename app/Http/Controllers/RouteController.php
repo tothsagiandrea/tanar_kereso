@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Password;
+
 use App\Models\User;
 use App\Models\UserGroup;
 use App\Models\Teacher;
@@ -41,6 +43,22 @@ class RouteController extends Controller
 
     public function showForgottenPasswordPage () : View {
         return view('forgottenpassword');
+    }
+
+    public function forgottenPassword(Request $request) {
+        $request->validate(['email' => ['required', 'email']]);
+
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
+
+        return $status === Password::RESET_LINK_SENT
+                ? back()->with(['status' => __($status)])
+                : back()->withErrors(['email' => __($status)]);
+    }
+
+    public function resetpassword(string $token) {
+        return view('resetpassword', ['token' => $token]);
     }
     
     public function showRegistration () : View {

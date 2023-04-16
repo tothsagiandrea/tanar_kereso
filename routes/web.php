@@ -32,4 +32,6 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/login', [RouteController::class, 'showLogin'])->name('loginPage');
     Route::get('/register', [RouteController::class, 'showRegistration'])->name('registrationPage');
     Route::get('/forgotten_password', [RouteController::class, 'showForgottenPasswordPage'])->name('passwordPage');
+    Route::post('/forgotten_password', [RouteController::class, 'forgottenPassword'])->name('forgottenpassword');
+    Route::get('/reset-password/{token}',[RouteController::class, 'resetpassword'])->name('password.reset');
 });

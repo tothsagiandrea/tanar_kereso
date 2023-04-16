@@ -330,6 +330,9 @@ h2 {
 }
 
 @media screen and (max-width: 1366px) {
+    nav {
+        padding: 0 1% !important;
+    }
 }
 
 @media screen and (max-width: 1600px) {
