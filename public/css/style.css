@@ -492,3 +492,17 @@ h2 {
   {
     border-radius: 15px;
   }
+
+  .dropdown {
+    margin: 0px 5px 0px 5px;
+  }
+
+  .dropdown-menu[data-bs-popper]{
+    right: 0;
+    left: auto;
+  }
+
+  .dropdown-item {
+    text-transform: none;
+    font-size: medium;
+  }

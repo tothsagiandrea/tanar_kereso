@@ -10,7 +10,7 @@
         @yield('styles')
         <link rel="icon" href="{{asset('img/graduation_cap.svg')}}" type="image/svg+xml">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
+        <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
     </head>
     <body>        
         <div class="main-container">
@@ -40,10 +40,17 @@
                             <button class="btn btn-outline-light" type="submit">Keresés</button>
                         </form>
                         @auth
-                        <div class="user-menu">
-                            <button class="btn btn-outline-light" type="button">Profilom</button> 
-                            <a class="btn btn-outline-light" href="{{route('logoutUser')}}">Kilépés</a> 
-                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Profilom
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="{{route('logoutUser')}}">Kilépés</a></li>
+                              <li><a class="dropdown-item" href="{{route('teacherDataPage')}}">Adatok módosítása</a></li>
+                            </ul>
+                          </div>
+                        <!--<button class="btn btn-outline-light" type="button">Profilom</button> 
+                        <a class="btn btn-outline-light" href="{{route('logoutUser')}}">Kilépés</a> -->
                         @endauth
                     </nav>
                 </div>
