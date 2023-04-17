@@ -48,7 +48,7 @@
 			</div>
 			<div class="row">
 				<div>
-					<input type="password" id="password1" name="password1" placeholder="Jelszó újra" required>
+					<input type="password" id="password_confirmation" name="password_confirmation" placeholder="Jelszó újra" required>
 				</div>
 			</div>
 			<div class="row">

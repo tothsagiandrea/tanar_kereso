@@ -10,6 +10,11 @@
 			<form method="post" action="{{route('loginUser')}}" class="login-form">
 				@csrf
 				<div class="form-title">Belépés</div>
+				<div class="row messages">
+					@if (session('status'))
+					 {{ session('status') }}
+					@endif
+				</div>
 				<input type="email" placeholder="E-mail cím" name="email">
 				<input type="password" placeholder="Jelszó" name="password">
 				<div class="row">

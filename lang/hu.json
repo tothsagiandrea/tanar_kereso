@@ -1,0 +1,20 @@
+{
+    "Whoops!": "Hoppá!",
+    "Hello!": "Üdv!",
+    "Regards": "Tisztelettel:",
+    "If you're having trouble clicking the \":actionText\" button, copy and paste the URL below\ninto your web browser:": "Ha problémába ütközöl a(z) \":actionText\" gomb megnyomásakor, másold be az alábbi linket\na böngésződbe:",
+
+    "Reset Password Notification": "Elfelejtett jelszó",
+    "You are receiving this email because we received a password reset request for your account.": "Ezt az emailt azért kaptad, mert jelszavad módosítását kezdeményezted.",
+    "Reset Password": "Jelszó megváltoztatása",
+    "This password reset link will expire in :count minutes.": "Ez a link :count perc múlva lejár.",
+    "If you did not request a password reset, no further action is required.": "Ha nem Te kezdeményezted jelszavad megváltoztatását, úgy egyéb teendőd nincsen.",
+
+    
+    "Verify Email Address": "Email cím megerősítése",
+    "Please click the button below to verify your email address.": "Az email címed megerősítéséhez kattints az alábbi gombra.",
+    "If you did not create an account, no further action is required.": "Ha nem Te hoztad létre a fiókot, úgy egyéb teendőd nincsen.",
+
+
+    "These credentials do not match our records.": "Hiba történt a bejeletkezéskor."
+}
