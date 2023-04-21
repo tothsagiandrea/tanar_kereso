@@ -19,7 +19,7 @@ Route::get('/', [RouteController::class, 'showIndex'])->name('indexPage');
 Route::get('/contacts', [RouteController::class, 'showContacts'])->name('contactsPage');
 Route::get('/services', [RouteController::class, 'showServices'])->name('servicesPage');
 Route::get('/forum', [RouteController::class, 'showForum'])->name('forumPage');
-Route::get('/teacher', [RouteController::class, 'showTeacherPage'])->name('teacherPage');
+Route::get('/teacher/{id}', [RouteController::class, 'showTeacherPage'])->name('teacherPage');
 
 Route::post('/login', [UserAuthController::class, 'loginUser'])->name('loginUser');
 Route::post('/register', [UserAuthController::class, 'registerUser'])->name('registerUser');
