@@ -84,14 +84,22 @@ option[value=""][disabled] {
   }
 .elerhetoseg
 {
-    
-    
+    border-radius: 25px;
+    background-color: aliceblue;
+    text-align: center;
 }
-iframe
+.pElerhetoseg
 {
-    margin-left: 650px;
+    font-size: 20px;
+    margin-top: 30px;
 }
 
+
+.g-maps {
+    width: 98%;
+    height: 600px;
+    max-width: 800px;
+}
   
 
 @media screen and (max-width: 375px) {
@@ -101,6 +109,9 @@ iframe
 }
 
 @media screen and (max-width: 550px) {
+    .g-maps {
+        height: 400px;
+    }
 }
 
 @media screen and (max-width: 768px) {

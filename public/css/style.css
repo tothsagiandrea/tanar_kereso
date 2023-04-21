@@ -188,6 +188,7 @@ h2 {
 .filter-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 2em;
     width: 100%;
     margin: 0;
