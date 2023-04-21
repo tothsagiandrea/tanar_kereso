@@ -18,8 +18,8 @@
 				<input type="email" placeholder="E-mail cím" name="email">
 				<input type="password" placeholder="Jelszó" name="password">
 				<div class="row">
-					<input type="checkbox" name="rememberme" id="rememberme">
-					<label for="rememberme">Emlékezzen rám</label>
+					<input type="checkbox" name="remember" id="remember">
+					<label for="remember">Emlékezzen rám</label>
 				</div>
 				<div class="row">
 					<a href="{{route('passwordPage')}}">Elfelejtettem a jelszavam</a>

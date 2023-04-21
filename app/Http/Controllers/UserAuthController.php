@@ -18,6 +18,7 @@ use App\Models\UserGroup;
 use App\Models\Teacher;
 
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\UserLoginRequest;
 use Illuminate\Support\Facades\Redirect;
 
 class UserAuthController extends Controller
@@ -124,14 +125,12 @@ class UserAuthController extends Controller
         return view('login');
     }
     
-    public function loginUser(Request $request) {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
-        
+    public function loginUser(UserLoginRequest $request) {
+        $email = $request->email;
+        $password = $request->password;
+        $remember = $request->remember;
         // Authenticating user
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
             $request->session()->regenerate();
             $user = auth()->user();
             $email = $user->email;
