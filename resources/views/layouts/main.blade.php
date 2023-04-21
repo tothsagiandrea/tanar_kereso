@@ -49,8 +49,6 @@
                               <li><a class="dropdown-item" href="{{route('teacherDataPage')}}">Adatok módosítása</a></li>
                             </ul>
                           </div>
-                        <!--<button class="btn btn-outline-light" type="button">Profilom</button> 
-                        <a class="btn btn-outline-light" href="{{route('logoutUser')}}">Kilépés</a> -->
                         @endauth
                     </nav>
                 </div>
