@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Psy\Readline\Hoa\Console;
@@ -12,7 +13,8 @@ use Psy\Readline\Hoa\Console;
 class RouteController extends Controller
 {
     public function showIndex () : View {
-        return view('index');
+        $teachers = Teacher::get();
+        return view('index', compact('teachers'));
     }
 
     public function showContacts () : View {
@@ -35,7 +37,9 @@ class RouteController extends Controller
         dd($request);
     }
 
-    public function showTeacherPage () : View {
-        return view('teacher');
+    public function showTeacherPage (Request $request) : View {
+        $teachers = Teacher::get();
+        $teacher = $teachers->find($request->id);
+        return view('teacher', compact('teacher'));
     }
 }
