@@ -3,6 +3,13 @@ INSERT INTO `user_groups`(`name`, `selectable`) VALUES
 ('tanár', 1),
 ('diák', 1)
 
+INSERT INTO `qualifications`(`qualification`) VALUES
+('Érettségi vizsga'),
+('Technikum / OKJ'),
+('Főiskolai/egyetemi alapképzés (BSc/BA)'),
+('Főiskolai/egyetemi mesterképzés (MSc)'),
+('Doktori fokozat (PhD/DLA)')
+
 INSERT INTO `subjects`(`subject`) VALUES
 ('Biológia-egészségtan'),
 ('Dráma és tánc'),
@@ -32,9 +39,7 @@ INSERT INTO `subjects`(`subject`) VALUES
 ('Természettudományi gyakorlatok'),
 ('Testnevelés és sport'),
 ('Történelem, társadalmi és állampolgári ismeretek'),
-('Vizuális kultúra')
-
-INSERT INTO `subjects`(`subject`) VALUES
+('Vizuális kultúra'),
 ('albán'),
 ('angol'),
 ('cseh'),
@@ -91,7 +96,12 @@ INSERT INTO `subjects`(`subject`) VALUES
 ('vietnami'),
 ('walesi')
 
-INSERT INTO `grades`(`grade`) VALUES
+INSERT INTO `contact_types`(`contact_type`) VALUES
+('telefonszám'),
+('cím'),
+('email cím'),
+
+INSERT INTO `levels`(`level`) VALUES
 ('Általános iskola (1-4. évfolyam)'),
 ('Általános iskola (5-8. évfolyam)'),
 ('Gimnázium (négyosztályos)'),

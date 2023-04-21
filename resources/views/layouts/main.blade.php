@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Tanárkereső</title>
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/style.css')}}">
         <link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
         @yield('styles')
         <link rel="icon" href="{{asset('img/graduation_cap.svg')}}" type="image/svg+xml">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

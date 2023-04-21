@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
-            $table->string('email', 320)->unique()->index();
-            $table->string('full_name', 50);
             $table->mediumText('curriculum_vitae');
             $table->smallInteger('hourly_rate');
             $table->string('profile_pic_path', 500)->nullable();
             $table->string('profile_video_path', 500)->nullable();
+            $table->foreignId('user')->references('id')->on('users')->onUpdate('cascade')->onDelete;
             $table->timestamps();
 
             $table->charset = 'utf8mb4';
