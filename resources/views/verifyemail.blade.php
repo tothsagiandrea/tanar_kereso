@@ -7,7 +7,10 @@
   <p>Jelenleg még nem erősítetted meg profilodhoz tartozó email címedet</p>
   <p>Keresd fel email fiókodat, és keress "Tanárkereső" emailére!</p>
   <p>Ha szeretnéd, az alábbi gombra kattintva újraküldjük a megerősítő email!.</p>
-  <a href="{{ route('verification.send') }}" class="bn632-hover bn22">Email küldése</a>
+  <form method="post" action="{{ route('verification.send') }}">
+	@csrf
+	<input type="submit" class="bn632-hover bn22" value="Email küldése">
+  </form>
   <p>Üdv</p>
   <p>Tanárkereső</p>
 @endsection
