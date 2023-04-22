@@ -2,33 +2,41 @@
 
 @section('content')
 <div class="teacher-container">
-	<h2>Tanárok listája</h2>
 	<div class="filter-container">
-		<h3>Szűrés</h3>
+		<h3>Szűrők</h3>
 		<div class="filter-element-vertical">
-			<label for="subject1">Tantárgyak</label>
-			<select id="subject1" name="subject1">
-				<option value="matek">Matek</option>
-				<option value="fizika">Fizika</option>
-				<option value="foldrajz">Földrajz</option>
+			<label for="subject">Tantárgyak</label>
+			<select id="subject" name="subject">
+				@foreach ($subjects as $subject)
+				<option value={{$subject->id}}>{{$subject->subject}}</option>
+				@endforeach
 			</select>
 		</div>
 		<div class="filter-element-vertical">
-			<label for="subject2">Tantárgyak</label>
-			<select id="subject2" name="subject1">
-				<option value="matek">Matek</option>
-				<option value="fizika">Fizika</option>
-				<option value="foldrajz">Földrajz</option>
+			<label for="grades">Tanulási szint</label>
+			<select id="grades" name="grades">
+				@foreach ($grades as $grade)
+				<option value={{$grade->id}}>{{$grade->grade}}</option>
+				@endforeach
 			</select>
 		</div>
 		<div class="filter-element-vertical">
-			<label for="subject3">Tantárgyak</label>
+			<label for="towns">Helyszín</label>
+			<select id="towns" name="towns">
+				@foreach ($towns as $town)
+				<option value={{$town->id}}>{{$town->town}}</option>
+				@endforeach
+			</select>
+		</div>
+		<div class="filter-element-vertical">
+			<label for="subject3">Óradíj</label>
 			<select id="subject3" name="subject1">
 				<option value="matek">Matek</option>
 				<option value="fizika">Fizika</option>
 				<option value="foldrajz">Földrajz</option>
 			</select>
 		</div>
+		<button type="button" class="btn btn-danger">Szűrés</button>
 	</div>
 	<div class="teacher-list-container">
 		<div class="teacher-list">

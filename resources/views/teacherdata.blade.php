@@ -13,7 +13,9 @@
 		<div class="row">
 			<div class="col">
 				<label for="exampleFormControlInput1">Teljes név</label>
-				<input type="text" class="form-control" placeholder="Név" required>
+				<input type="text" class="form-control" placeholder="Név" required @isset($user)
+					value="{{$user->name}}"
+				@endisset>
 			</div>
 			<div class="col">
 				<label for="exampleFormControlInput1">Legmagasabb iskolai végzettség</label>
@@ -22,7 +24,9 @@
 		</div>
 		<div class="form-group">
 			<label for="exampleFormControlInput1">Email address</label>
-			<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+			<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="example@example.hu"  required @isset($user)
+			value="{{$user->email}}"
+		@endisset>>
 		</div>
 		<div class="form-group">
 			<label for="exampleFormControlSelect1">Oktatás módja</label>
