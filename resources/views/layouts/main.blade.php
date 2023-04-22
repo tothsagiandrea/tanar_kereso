@@ -12,7 +12,10 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
     </head>
-    <body>        
+    <body>
+        <header>
+            <img src="img\fejlec.png" class="header-fejlec" alt="fejlec">
+        </header>        
         <div class="main-container">
             <div class="header-container">
                 <img src="img\hatter.png" class="header-image" alt="fokep">

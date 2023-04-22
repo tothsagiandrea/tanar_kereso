@@ -12,7 +12,10 @@
     font-family: 'Montserrat';
     font-size: 11pt;
 }
-
+.header-fejlec
+{
+    width: 100%;
+}
 html, body {
     width: 100%;
     margin: 0 !important;
