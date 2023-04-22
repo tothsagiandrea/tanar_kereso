@@ -61,6 +61,7 @@ class UserAuthController extends Controller
     }
     
     public function verifyEmail(EmailVerificationRequest $request) {
+        dd($request);
         $request->fulfill();
         $verified = true;
 
