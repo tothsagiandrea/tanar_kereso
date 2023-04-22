@@ -32,102 +32,23 @@
 	</div>
 	<div class="teacher-list-container">
 		<div class="teacher-list">
-			<a href="#" title="Részletekért kattints a névjegykártyára.">
+            @foreach ($teachers as $teacher)
+            <a href="#" title="Részletekért kattints a névjegykártyára.">
 				<div class="teacher-card">
 					<div class="top-strip">
-						<h2>Gipsz Jakab</h2>
+						<h2>{{ $teacher->full_name }}</h2>
 						<h3>számítástechnika, programozás</h3>
 					</div>
 					<div class="avatar">
-						<img src="{{ asset('img/user.svg')}}" alt="Gipsz Jakab">
+						<img src="{{ asset('img/user.svg')}}" alt="{{ $teacher->full_name }}">
 					</div>
 					<div class="details">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
+						<p>{{ $teacher->curriculum_vitae }}</p>
 					</div>
-					<a href="{{route('teacherPage')}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
-					<a href="{{route('teacherDataPage')}}">További információ</a>
+					<a href="{{route('teacherPage', $teacher->id)}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
 				</div>
 			</a>
-			<a href="#" title="Részletekért kattints a névjegykártyára.">
-				<div class="teacher-card">
-					<div class="top-strip">
-						<h2>Gipsz Jakab</h2>
-						<h3>számítástechnika, programozás</h3>
-					</div>
-					<div class="avatar">
-						<img src="{{ asset('img/user.svg')}}" alt="Gipsz Jakab">
-					</div>
-					<div class="details">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
-					</div>
-					<a href="{{route('teacherPage')}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
-					<a href="{{route('teacherDataPage')}}">További információ</a>
-				</div>
-			</a>
-			<a href="#" title="Részletekért kattints a névjegykártyára.">
-				<div class="teacher-card">
-					<div class="top-strip">
-						<h2>Gipsz Jakab</h2>
-						<h3>számítástechnika, programozás</h3>
-					</div>
-					<div class="avatar">
-						<img src="{{ asset('img/user.svg')}}" alt="Gipsz Jakab">
-					</div>
-					<div class="details">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
-					</div>
-					<a href="{{route('teacherPage')}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
-					<a href="{{route('teacherDataPage')}}">További információ</a>
-				</div>
-			</a>
-			<a href="#" title="Részletekért kattints a névjegykártyára.">
-				<div class="teacher-card">
-					<div class="top-strip">
-						<h2>Gipsz Jakab</h2>
-						<h3>számítástechnika, programozás</h3>
-					</div>
-					<div class="avatar">
-						<img src="{{ asset('img/user.svg')}}" alt="Gipsz Jakab">
-					</div>
-					<div class="details">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
-					</div>
-					<a href="{{route('teacherPage')}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
-					<a href="{{route('teacherDataPage')}}">További információ</a>
-				</div>
-			</a>
-			<a href="#" title="Részletekért kattints a névjegykártyára.">
-				<div class="teacher-card">
-					<div class="top-strip">
-						<h2>Gipsz Jakab</h2>
-						<h3>számítástechnika, programozás</h3>
-					</div>
-					<div class="avatar">
-						<img src="{{ asset('img/user.svg')}}" alt="Gipsz Jakab">
-					</div>
-					<div class="details">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
-					</div>
-					<a href="{{route('teacherPage')}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
-					<a href="{{route('teacherDataPage')}}">További információ</a>
-				</div>
-			</a>
-			<a href="#" title="Részletekért kattints a névjegykártyára.">
-				<div class="teacher-card">
-					<div class="top-strip">
-						<h2>Gipsz Jakab</h2>
-						<h3>számítástechnika, programozás</h3>
-					</div>
-					<div class="avatar">
-						<img src="{{ asset('img/user.svg')}}" alt="Gipsz Jakab">
-					</div>
-					<div class="details">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a, delectus nemo voluptates officiis soluta ullam eius ad enim odio quo dolor, eveniet nisi! Ipsum eligendi facere veniam ab accusamus.</p>
-					</div>
-					<a href="{{route('teacherPage')}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
-					<a href="{{route('teacherDataPage')}}">További információ</a>
-				</div>
-			</a>
+            @endforeach
 		</div>
 	</div>
 @endsection

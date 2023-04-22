@@ -496,6 +496,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'laravel/scout' => array(
+            'pretty_version' => 'v10.1.1',
+            'version' => '10.1.1.0',
+            'reference' => 'f6cf455097a207430a95226b5152c6be7c9109d8',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/scout',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'laravel/serializable-closure' => array(
             'pretty_version' => 'v1.3.0',
             'version' => '1.3.0.0',

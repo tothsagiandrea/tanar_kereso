@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('teached_subjects', function (Blueprint $table) {
             $table->id();
             $table->foreignId('teacher')->references('id')->on('teachers')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('subject')->references('id')->on('subjects')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('level')->references('id')->on('levels')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('subject_grade')->references('id')->on('grades_for_subject')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
 
             $table->charset = 'utf8mb4';

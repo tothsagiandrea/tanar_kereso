@@ -6,7 +6,7 @@
       <div class="d-flex bg-light sablontanaroknak" style="height:700px">
         <div class="p-2 border" style="width: 250px">
           <div class="container-fluid sablontanaroknak">
-            <p class="nev">Gipsz Jakab</p>
+            <p class="nev">{{ $teacher->full_name }}</p>
             <p class="vegzettseg">Matematika tanár</p>
             <img src="{{ asset('img/profile1.jpg')}}" class="rounded-circle fototanar" alt="arckep">
             <hr color="#555457" width="60%" size="5">
@@ -18,7 +18,7 @@
             <span class="material-icons">
               email
             </span><br>
-            <p>gipszjakab@gmail.com</p>
+            <p>{{ $teacher->email }}</p>
             <span class="material-icons">
               location_on
             </span>
@@ -26,13 +26,13 @@
             <hr color="#555457" width="60%" size="5">
             <p>Óradíj</p>
             <img src="{{ asset('img/banking.png')}}" class="iconbanking" alt="icon">
-            <p>5000 Ft/óra</p>
+            <p>{{ $teacher->hourly_rate }} Ft/óra</p>
           </div>
-          
+
         </div>
         <div class="p-2 border align-self-start"style="width: 500px">Rólam
           <div class="mt-4 p-5 bs-info-bg-subtle text-black rounded">
-            
+
             <p>Az ELTE matematika tanári mesterképzésén végeztem, magántanárként pedig már több mint öt éves szakmai tapasztalattal rendelkezem, éppen ezért megfelelően tudom kezelni azokat a problémákat, nehézségeket, amelyek a tanulás folyamán felmerülhetnek.Óráim személyre szabottak, minden tanulóm számára az igényeinek, elvárásainak megfelelő tantervet készítek. Rendszeres házi feladatokkal és egyéb módszertani eszközök felhasználásával segítem még inkább a megszerzett ismeretek elmélyítését.
               Legyen szó tehát felzárkóztatásról, vizsga- vagy zh felkészítésről, fordulj hozzám bizalommal!</p>
           </div>
@@ -52,15 +52,15 @@
               <td style="padding-left: 35px" scope="row">Általános</td>
             </tr>
           </table>
-        
+
         </div>
       </div>
       <div class="d-flex justify-content-center">
         <a href="{{route('indexPage')}}"><button type="button" class="bn632-hover bn22 visszabt">Vissza</button></a>
       </div>
-      
-      
-      
+
+
+
     </div>
-    
+
 @endsection
