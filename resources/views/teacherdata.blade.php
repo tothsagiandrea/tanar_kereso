@@ -46,6 +46,9 @@
 		</div>
 		<div class="form-group">
 			<label for="exampleFormControlSelect1">Mely tantárgyakat szeretné tanítani?</label>
+			<div class="checkbox_controller">
+				
+			</div>
 			<select multiple class="form-control" id="exampleFormControlSelect1" required>
 				<option>Matematika</option>
 				<option>Fizika</option>
