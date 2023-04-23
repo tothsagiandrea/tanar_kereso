@@ -16,6 +16,7 @@ use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\UserGroup;
 use App\Models\Teacher;
+use App\Models\Qualification;
 
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserLoginRequest;
@@ -146,6 +147,14 @@ class UserAuthController extends Controller
         }
 
         return redirect()->back()->with('status', __('These credentials do not match our records.'));
+    }
+
+    /* *** USER DATA FUNCTIONS (TEACHERS) *** */
+
+    public function getTeacherData() {
+        $user = auth()->user();
+        $qualifications = Qualification::all();
+        
     }
 
     /* *** USER LOGOUT *** */
