@@ -134,14 +134,12 @@ class UserAuthController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
             $request->session()->regenerate();
             $user = auth()->user();
-            $id = $user->id;
-            $user_group = $user->user_group;
-            $teacher_user_group = UserGroup::where('name', 'tanár')->get('id');
-            if ($teacher_user_group[0]->id == $user_group) {
-                $teacher = Teacher::where('user', $id)->get();
-                if (count($teacher) == 0) {
+            if ($user->userGroup->name == 'tanár')
+            {
+                if ($user->teacher == null)
+                {
                     Redirect::to('/teacherdata');
-                    return view('teacherdata');
+                    return view('teacherdata', compact('user'));
                 }
             }
             return redirect()->intended('/');
