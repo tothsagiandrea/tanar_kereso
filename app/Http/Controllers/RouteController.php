@@ -1,14 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+use Psy\Readline\Hoa\Console;
 
 use App\Models\Grade;
 use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\Town;
-use Illuminate\Http\Request;
-use Illuminate\View\View;
-use Psy\Readline\Hoa\Console;
 
 /**
  * Summary of RouteController
@@ -19,7 +20,7 @@ class RouteController extends Controller
         $teachers = Teacher::get();
         $subjects = Subject::get();
         $grades = Grade::get();
-        $towns = Town::get()->orderBy('town');
+        $towns = DB::table('towns')->orderBy('town')->get();
         return view('index', compact('teachers', 'subjects', 'grades', 'towns'));
     }
 
