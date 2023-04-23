@@ -15,7 +15,8 @@ class Teacher extends Model
         'curriculum_vitae',
         'hourly_rate',
         'profile_pic_path',
-        'profile_video_path'
+        'profile_video_path',
+        '"user'
     ];
 
     /**

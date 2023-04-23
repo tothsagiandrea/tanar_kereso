@@ -9,4 +9,8 @@ use Laravel\Scout\Searchable;
 class Subject extends Model
 {
     use HasFactory, Searchable;
+
+    protected $fillable = [
+        'subject'
+    ];
 }

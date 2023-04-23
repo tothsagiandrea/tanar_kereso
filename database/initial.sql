@@ -103,6 +103,11 @@ INSERT INTO `contact_types` (`contact_type`) VALUES
 ('cím'),
 ('email cím');
 
+INSERT INTO `lesson_types` (`lesson_type`) VALUES
+('online'),
+('saját címen'),
+('tanuló címén');
+
 INSERT INTO `grades` (`grade`) VALUES
 ('Általános iskola (1-4. évfolyam)'),
 ('Általános iskola (5-8. évfolyam)'),
