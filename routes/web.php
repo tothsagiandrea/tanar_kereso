@@ -21,6 +21,7 @@ Route::get('/services', [RouteController::class, 'showServices'])->name('service
 Route::get('/forum', [RouteController::class, 'showForum'])->name('forumPage');
 Route::get('/teacher/{id}', [RouteController::class, 'showTeacherPage'])->name('teacherPage');
 Route::get('/aszf', [RouteController::class, 'showAszf'])->name('aszfPage');
+Route::get('/gdpr', [RouteController::class, 'showGdpr'])->name('gdprPage');
 
 Route::post('/login', [UserAuthController::class, 'loginUser'])->name('loginUser');
 Route::post('/register', [UserAuthController::class, 'registerUser'])->name('registerUser');

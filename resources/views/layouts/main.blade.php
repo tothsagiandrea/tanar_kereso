@@ -62,7 +62,7 @@
             <footer class="footer-container">
                 <img src="img/logo.jpg" alt="logo" id="logolablec">
                 <span class="material-icons icons">phone</span>
-                <a href="">Adatvédelmi szabályzat</a>
+                <a href="{{route('gdprPage')}}">Adatvédelmi szabályzat</a>
                 <a href="{{route('aszfPage')}}">ÁSZF</a>
                 <a href="{{route('contactsPage')}}">Kapcsolat</a>
 
