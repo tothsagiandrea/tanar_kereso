@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
     </head>
-    <body>        
+    <body>
         <div class="main-container">
             <div class="header-container">
                 <img src="img\hatter.png" class="header-image" alt="fokep">
@@ -33,7 +33,7 @@
                                 <a class="nav-link" href="{{route('loginPage')}}">Bejelentkezés</a>
                                 <a class="nav-link" href="{{route('registrationPage')}}">Regisztráció</a>
                                 @endguest
-                            </div>        
+                            </div>
                         </div>
                         <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Keresés..." aria-label="Keresés">
@@ -60,7 +60,7 @@
                 <img src="img/logo.jpg" alt="logo" id="logolablec">
                 <span class="material-icons icons">phone</span>
                 <a href="">Adatvédelmi szabályzat</a>
-                <a href="">ÁSZF</a>
+                <a href="{{route('aszfPage')}}">ÁSZF</a>
                 <a href="{{route('contactsPage')}}">Kapcsolat</a>
 
             </footer>

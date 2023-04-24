@@ -42,4 +42,8 @@ class RouteController extends Controller
         $teacher = $teachers->find($request->id);
         return view('teacher', compact('teacher'));
     }
+
+    public function showAszfPage () : View {
+        return view('aszf');
+    }
 }
