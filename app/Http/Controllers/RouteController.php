@@ -51,7 +51,7 @@ class RouteController extends Controller
         return view('teacher', compact('teacher'));
     }
 
-    public function showAszfPage () : View {
+    public function showAszf () : View {
         return view('aszf');
     }
 }
