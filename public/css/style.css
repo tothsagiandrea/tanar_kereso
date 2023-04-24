@@ -12,7 +12,10 @@
     font-family: 'Montserrat';
     font-size: 11pt;
 }
-
+.header-fejlec
+{
+    width: 100%;
+}
 html, body {
     width: 100%;
     margin: 0 !important;
@@ -30,6 +33,10 @@ nav {
     background-size: cover;
     width: 100%;
     padding: 0 2% !important;
+    height: 60px;
+    border-top:solid;
+    border-bottom: solid;
+    border-color: #e9bd0b;
 }
 
 nav a {

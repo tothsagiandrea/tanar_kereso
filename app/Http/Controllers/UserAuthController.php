@@ -16,6 +16,7 @@ use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\UserGroup;
 use App\Models\Teacher;
+use App\Models\Qualification;
 
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserLoginRequest;
@@ -61,6 +62,7 @@ class UserAuthController extends Controller
     }
     
     public function verifyEmail(EmailVerificationRequest $request) {
+        dd($request);
         $request->fulfill();
         $verified = true;
 
@@ -133,20 +135,26 @@ class UserAuthController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
             $request->session()->regenerate();
             $user = auth()->user();
-            $id = $user->id;
-            $user_group = $user->user_group;
-            $teacher_user_group = UserGroup::where('name', 'tanár')->get('id');
-            if ($teacher_user_group[0]->id == $user_group) {
-                $teacher = Teacher::where('user', $id)->get();
-                if (count($teacher) == 0) {
+            if ($user->userGroup->name == 'tanár')
+            {
+                if ($user->teacher == null)
+                {
                     Redirect::to('/teacherdata');
-                    return view('teacherdata');
+                    return view('teacherdata', compact('user'));
                 }
             }
             return redirect()->intended('/');
         }
 
         return redirect()->back()->with('status', __('These credentials do not match our records.'));
+    }
+
+    /* *** USER DATA FUNCTIONS (TEACHERS) *** */
+
+    public function getTeacherData() {
+        $user = auth()->user();
+        $qualifications = Qualification::all();
+        
     }
 
     /* *** USER LOGOUT *** */

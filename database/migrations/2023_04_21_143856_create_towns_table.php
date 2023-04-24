@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('towns', function (Blueprint $table) {
             $table->id();
+            $table->string('town', 100);
+            $table->foreignId('county')->references('id')->on('counties')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
+
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_general_ci';
         });
     }
 
