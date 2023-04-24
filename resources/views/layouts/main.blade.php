@@ -13,6 +13,9 @@
         <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
     </head>
     <body>
+        <header>
+            <img src="img\fejlec.png" class="header-fejlec" alt="fejlec">
+        </header>
         <div class="main-container">
             <div class="header-container">
                 <img src="img\hatter.png" class="header-image" alt="fokep">
