@@ -54,4 +54,8 @@ class RouteController extends Controller
     public function showAszf () : View {
         return view('aszf');
     }
+
+    public function showGdpr () : View {
+        return view('gdpr');
+    }
 }
