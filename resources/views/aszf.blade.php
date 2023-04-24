@@ -527,6 +527,11 @@
             (a továbbiakban: Rendelet. GDPR) és a 2011. évi CXII. tv. (a továbbiakban: Infotv.) alapján.
         </P>
 
+        <button
+        class="btn btn-outline-dark vissza" type="submit">
+        <a href="{{route('aszfPage')}}">Vissza az oldal tetejére</a>
+        </button>
+
 
 
 
