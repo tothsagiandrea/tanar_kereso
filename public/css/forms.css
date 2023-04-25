@@ -85,6 +85,15 @@ option[value=""][disabled] {
     display: none;
 }
 
+select option {
+    padding: 0.2em 1em;
+}
+
+.form-control.horizontal_layout {
+    width: 100%;
+    height: 6em;
+}
+
 .message_container {
     width: 97%;
     max-width: 600px;

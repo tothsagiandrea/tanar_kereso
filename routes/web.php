@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RouteController;
-USE App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,7 @@ Route::post('/register', [UserAuthController::class, 'registerUser'])->name('reg
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/teacherdata', [RouteController::class, 'showTeacherDataPage'])->name('teacherDataPage');
-    Route::post('/teacherdata', [RouteController::class, 'setTeacherData'])->name('setTeacherData');
+    Route::post('/teacherdata', [TeacherController::class, 'insertTeacherData'])->name('setTeacherData');
     Route::get('/emailverification', [UserAuthController::class, 'showVerifyEmailPage'])->name('verification.notice');
     Route::get('/verifiedemail', [UserAuthController::class, 'showVerifiedEmailPage'])->name('verifiedEmailPage');
     Route::get('/logout', [UserAuthController::class, 'logoutUser'])->name('logoutUser');

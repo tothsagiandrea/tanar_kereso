@@ -44,11 +44,11 @@ class RouteController extends Controller
         $data = (new TeacherController)->getTeacherData();
         $qualifications = $data['qualifications'];
         $lesson_types = $data['lesson_types'];
-        $subjects = $data['subjects'];
+        $grades = $data['grades'];
         $counties = $data['counties'];
 
         Redirect::to('/teacherdata');
-        return view('teacherdata', compact('user', 'qualifications', 'lesson_types', 'subjects', 'counties'));
+        return view('teacherdata', compact('user', 'qualifications', 'lesson_types', 'grades', 'counties'));
     }
 
     public function setTeacherData(Request $request) {
