@@ -1,7 +1,8 @@
 @extends('layouts.main')
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 @section('content')
-  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <article class="col-sm12 col-lg6">
     <div class="flex-container">
       <div id="carousel-container">
