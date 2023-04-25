@@ -12,10 +12,12 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
     </head>
+
     <body>
         <header>
             <img src="img\fejlec.png" class="header-fejlec" alt="fejlec">
         </header>
+
         <div class="main-container">
             <div class="header-container">
                 <img src="img\hatter.png" class="header-image" alt="fokep">
@@ -38,10 +40,12 @@
                                 @endguest
                             </div>
                         </div>
+
                         <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Keresés..." aria-label="Keresés">
                             <button class="btn btn-outline-light" type="submit">Keresés</button>
                         </form>
+
                         @auth
                         <div class="dropdown">
                             <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,10 +59,12 @@
                         @endauth
                     </nav>
                 </div>
+
                 <div class="content-container">
                     @yield('content')
                 </div>
             </div>
+
             <footer class="footer-container">
                 <img src="img/logo.jpg" alt="logo" id="logolablec">
                 <span class="material-icons icons">phone</span>
