@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Psy\Readline\Hoa\Console;
 
+use App\Http\Controllers\TeacherController;
+
 use App\Models\Grade;
 use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\Town;
+use Illuminate\Support\Facades\Redirect;
 
 /**
  * Summary of RouteController
@@ -38,7 +41,14 @@ class RouteController extends Controller
 
     public function showTeacherDataPage () : View {
         $user = auth()->user();
-        return view('teacherdata', compact('user'));
+        $data = (new TeacherController)->getTeacherData();
+        $qualifications = $data['qualifications'];
+        $lesson_types = $data['lesson_types'];
+        $subjects = $data['subjects'];
+        $counties = $data['counties'];
+
+        Redirect::to('/teacherdata');
+        return view('teacherdata', compact('user', 'qualifications', 'lesson_types', 'subjects', 'counties'));
     }
 
     public function setTeacherData(Request $request) {

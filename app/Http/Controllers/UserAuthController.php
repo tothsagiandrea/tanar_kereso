@@ -17,10 +17,16 @@ use App\Models\User;
 use App\Models\UserGroup;
 use App\Models\Teacher;
 use App\Models\Qualification;
+use App\Models\LessonType;
+use App\Models\Subject;
+use App\Models\County;
+use App\Models\Town;
 
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserLoginRequest;
 use Illuminate\Support\Facades\Redirect;
+
+use App\Http\Controllers\RouteController;
 
 class UserAuthController extends Controller
 {
@@ -57,7 +63,6 @@ class UserAuthController extends Controller
         if ($verified) {
             return view('verifiedemail');
         }
-
         return redirect()->back();
     }
     
@@ -139,22 +144,14 @@ class UserAuthController extends Controller
             {
                 if ($user->teacher == null)
                 {
-                    Redirect::to('/teacherdata');
-                    return view('teacherdata', compact('user'));
+                    //$this->getTeacherData();
+                    return (new RouteController)->showTeacherDataPage();
                 }
             }
             return redirect()->intended('/');
         }
 
         return redirect()->back()->with('status', __('These credentials do not match our records.'));
-    }
-
-    /* *** USER DATA FUNCTIONS (TEACHERS) *** */
-
-    public function getTeacherData() {
-        $user = auth()->user();
-        $qualifications = Qualification::all();
-        
     }
 
     /* *** USER LOGOUT *** */

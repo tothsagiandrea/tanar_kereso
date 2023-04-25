@@ -17,6 +17,7 @@ class Subject extends Model
 
     public function grades():BelongsToMany
     {
-        return $this->belongsToMany(Grade::class)->using(GradeSubject::class);
+        return $this->belongsToMany(Grade::class, 'grades_for_subject', 'subject', 'grade')->withPivot('id')->using(GradeSubject::class);
+        //return $this->belongsToMany(Grade::class)->withPivot('id')->using(GradeSubject::class);
     }
 }

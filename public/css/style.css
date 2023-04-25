@@ -328,6 +328,11 @@ h2 {
     text-decoration: none;
 }
 
+.center-elements {
+    margin: 0 auto;
+    text-align: center;
+}
+
 @media screen and (max-width: 375px) {
 }
 
@@ -354,13 +359,13 @@ h2 {
     max-width: 1200px;
     background-color: #f3f2f895;
 }
-.teachdata{
-    min-width: 350px;
-    max-width: 750px;
-    min-height: 350px;
+.teachdata {
+    width: 97%;
     max-width: 750px;
     background-color: #9489c995;
+    margin: 2em auto;
 }
+
 .iconbanking
 {
     height: 40px;
