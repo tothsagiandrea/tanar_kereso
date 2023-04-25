@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tanárkereső</title>
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}">
@@ -15,12 +15,12 @@
 
     <body>
         <header>
-            <img src="img\fejlec.png" class="header-fejlec" alt="fejlec">
+            <img src="img\fejlec.png" class="header-fejlec" style="width: 100%" alt="fejlec">
         </header>
 
         <div class="main-container">
             <div class="header-container">
-                <img src="img\hatter.png" class="header-image" alt="fokep">
+                <img src="img\hatter.png" class="header-image" style="width: 100%" alt="fokep">
             </div>
             <div class="floating-container">
                 <div class="navigation-container">
@@ -67,7 +67,6 @@
 
             <footer class="footer-container">
                 <img src="img/logo.jpg" alt="logo" id="logolablec">
-                <span class="material-icons icons">phone</span>
                 <a href="{{route('gdprPage')}}">Adatvédelmi szabályzat</a>
                 <a href="{{route('aszfPage')}}">ÁSZF</a>
                 <a href="{{route('contactsPage')}}">Kapcsolat</a>

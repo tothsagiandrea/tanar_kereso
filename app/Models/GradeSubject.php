@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class GradeSubject extends Model
+class GradeSubject extends Pivot
 {
-    use HasFactory;
     protected $table = 'grades_for_subject';
+
+    protected $foreignKey = 'subject';
+    protected $relatedKey = 'grade';
+    public $incrementing = true;
+
 }
