@@ -20,6 +20,7 @@ h3
 
 p
 {
+    text-align: justify;
     text-justify: kashida;
     margin-top: 2px;
     margin-left: 40px;

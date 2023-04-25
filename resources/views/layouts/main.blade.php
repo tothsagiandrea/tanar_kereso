@@ -17,62 +17,56 @@
         <header>
             <img src="img\fejlec.png" class="header-fejlec" style="width: 100%" alt="fejlec">
         </header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler ml-auto bg-light my-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse navbar-dark my-3" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="{{route('indexPage')}}">Tanárkereső</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('servicesPage')}}">Információk</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('contactsPage')}}">Kapcsolat</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('forumPage')}}">Fórum</a></li>
+                        @guest
+                        <li class="nav-item"><a class="nav-link" href="{{route('loginPage')}}">Bejelentkezés</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('registrationPage')}}">Regisztráció</a></li>
+                        @endguest
+                    </ul>
 
-        <div class="main-container">
-            <div class="header-container">
-                <img src="img\hatter.png" class="header-image" style="width: 100%" alt="fokep">
-            </div>
-            <div class="floating-container">
-                <div class="navigation-container">
-                    <nav class="container-fluid navbar navbar-expand-lg navbar-light bg-light">
-                        <button class="navbar-toggler ml-auto bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Keresés..." aria-label="Keresés">
+                        <button class="btn btn-outline-light" type="submit">Keresés</button>
+                    </form>
+
+                    @auth
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Profilom
                         </button>
-                        <div class="collapse navbar-collapse navbar-dark" id="navbarNavAltMarkup">
-                            <div class="navbar-nav">
-                                <a class="nav-link" href="{{route('indexPage')}}">Tanárkereső</a>
-                                <a class="nav-link" href="{{route('servicesPage')}}">Információk</a>
-                                <a class="nav-link" href="{{route('contactsPage')}}">Kapcsolat</a>
-                                <a class="nav-link" href="{{route('forumPage')}}">Fórum</a>
-                                @guest
-                                <a class="nav-link" href="{{route('loginPage')}}">Bejelentkezés</a>
-                                <a class="nav-link" href="{{route('registrationPage')}}">Regisztráció</a>
-                                @endguest
-                            </div>
-                        </div>
-
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Keresés..." aria-label="Keresés">
-                            <button class="btn btn-outline-light" type="submit">Keresés</button>
-                        </form>
-
-                        @auth
-                        <div class="dropdown">
-                            <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Profilom
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="{{route('logoutUser')}}">Kilépés</a></li>
-                              <li><a class="dropdown-item" href="{{route('teacherDataPage')}}">Adatok módosítása</a></li>
-                            </ul>
-                          </div>
-                        @endauth
-                    </nav>
-                </div>
-
-                <div class="content-container">
-                    @yield('content')
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{route('logoutUser')}}">Kilépés</a></li>
+                        <li><a class="dropdown-item" href="{{route('teacherDataPage')}}">Adatok módosítása</a></li>
+                        </ul>
+                    </div>
+                    @endauth
                 </div>
             </div>
+        </nav>
 
-            <footer class="footer-container">
-                <img src="img/logo.jpg" alt="logo" id="logolablec">
-                <a href="{{route('gdprPage')}}">Adatvédelmi szabályzat</a>
-                <a href="{{route('aszfPage')}}">ÁSZF</a>
-                <a href="{{route('contactsPage')}}">Kapcsolat</a>
+        <main class="main-container">
+            <div class="floating-container">
+                <img src="img\hatter.png" class="header-image" alt="fokep">
+                @yield('content')
+            </div>
+        </main>
 
-            </footer>
-        </div>
+        <footer class="footer-container">
+            <img src="img/logo.jpg" alt="logo" id="logolablec">
+            <a href="{{route('gdprPage')}}">Adatvédelmi szabályzat</a>
+            <a href="{{route('aszfPage')}}">ÁSZF</a>
+            <a href="{{route('contactsPage')}}">Kapcsolat</a>
+        </footer>
         <script src="{{asset('js/adatbekero.js')}}"></script>
     </body>
 </html>
