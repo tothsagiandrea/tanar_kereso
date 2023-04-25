@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/aszf.css') }}">
+    <link rel="stylesheet" href="{{asset('css/aszf.css') }}">
 @endsection
 
 @section('content')
@@ -531,32 +531,6 @@
         class="btn btn-outline-dark vissza" type="submit">
         <a href="{{route('aszfPage')}}">Vissza az oldal tetejére</a>
         </button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <br>
     </div>

@@ -117,12 +117,12 @@ img.header-image {
 }
 
 #section1 {
-    
+
     border: 2px solid grey;
     border-radius: 5px;
     width: 800px;
     height: 300px;
-    
+
 }
 
 #indexbox {
@@ -132,7 +132,7 @@ img.header-image {
 h3 {
     text-align: center;
     color: rgb(71, 69, 69);
-    
+
 }
 
 #carousel-container {
@@ -371,8 +371,8 @@ h2 {
     min-width: 350px;
     max-width: 1200px;
     border-color: #2d1e78;
-    
-    
+
+
 }
 .nev
 {
@@ -409,7 +409,7 @@ h2 {
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
   }
-  
+
   .bn632-hover:hover, input[type=file]::file-selector-button:hover {
     background-position: 100% 0;
     -moz-transition: all .4s ease-in-out;
@@ -417,11 +417,11 @@ h2 {
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
   }
-  
+
   .bn632-hover:focus, input[type=file]::file-selector-button:hover {
     outline: none;
   }
-  
+
   .bn632-hover.bn22, input[type=file]::file-selector-button {
     background-image: linear-gradient(
       to right,
@@ -443,21 +443,21 @@ h2 {
     background: rgba(29, 145, 204, 0.426);
     border-radius: 15px;
   }
-  
+
   /* Create two unequal columns that floats next to each other */
   /* Left column */
   .leftcolumn {
     float: left;
     width: 75%;
   }
-  
+
   /* Right column */
   .rightcolumn {
     float: left;
     width: 25%;
     padding-left: 20px;
   }
-  
+
   /* Fake image */
   .fakeimg {
     border-radius: 10px;
@@ -465,21 +465,21 @@ h2 {
     width: 100%;
     padding: 20px;
   }
-  
+
   /* Add a card effect for articles */
   .card {
     background-color: rgba(29, 145, 204, 0.426);
     padding: 20px;
     margin-top: 20px;
   }
-  
+
   /* Clear floats after the columns */
   .row:after {
     content: "";
     display: table;
     clear: both;
   }
-  
+
   /* Footer */
   .footer {
     border-radius: 15px;
@@ -488,7 +488,7 @@ h2 {
     background: #ddd;
     margin-top: 20px;
   }
-  
+
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 800px) {
     .leftcolumn, .rightcolumn {
