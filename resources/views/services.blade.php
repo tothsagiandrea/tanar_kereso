@@ -1,5 +1,5 @@
 @extends('layouts.main')
-<<<<<<< HEAD
+
 @section('content')
 
 @section('styles')
@@ -42,20 +42,8 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-=======
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@section('content')
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<article class="col-sm12 col-lg6">
-    <div class="flex-container">
-      <div id="carousel-container">
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="img/slide1.jpg" class="d-block w-100 img-fluid" alt="slide1">
-              <div class="carousel-caption d-none d-md-block"></div>  
->>>>>>> 4c5ddab4a187388a56d8fe27764f8c9f7212e70e
+
             </div>
 
             <div class="flex-item-right">
@@ -115,7 +103,7 @@
                 </div>
 
                 <div class="col-sm-6 col-lg-4">
-                    <img src="img/cikk2.png" alt="cikk1 "style=style=height:300px;
+                    <img src="img/cikk2.png" alt="cikk1 ";
                         class="img-fluid img-thumbnail">
                     <br>
                     <br>
@@ -135,7 +123,7 @@
                 </div>
 
                 <div class="col-sm-6 col-lg-4">
-                    <img src="img/cikk3.png" alt="cikk1 "style=style=height:300px;
+                    <img src="img/cikk3.png" alt="cikk1 ";
                         class="img-fluid img-thumbnail">
                     <br>
                     <br>
@@ -155,7 +143,7 @@
                 </div>
 
                 <div class="col-sm-6 col-lg-4">
-                    <img src="img/cikk4.png" alt="cikk1 "style=style=height:300px;
+                    <img src="img/cikk4.png" alt="cikk1 ";
                         class="img-fluid img-thumbnail">
                     <br>
                     <br>
@@ -189,7 +177,7 @@
                 </div>
 
                 <div class="col-sm-6 col-lg-4">
-                    <img src="img/cikk5.png" alt="cikk1 "style=style=height:300px;
+                    <img src="img/cikk5.png" alt="cikk1 ";
                         class="img-fluid img-thumbnail">
                     <br>
                     <br>
@@ -217,7 +205,7 @@
                 </div>
 
                 <div class="col-sm-6 col-lg-4">
-                    <img src="img/cikk6.png" alt="cikk1 "style=style=height:300px;
+                    <img src="img/cikk6.png" alt="cikk1 ";
                         class="img-fluid img-thumbnail">
                     <br>
                     <br>
