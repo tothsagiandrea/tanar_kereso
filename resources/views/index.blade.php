@@ -1,6 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
+
+
+
+
+
 <div class="teacher-container">
 	<div class="filter-container">
 		<h3>Szűrők</h3>
@@ -19,6 +24,14 @@
 				<option value={{$grade->id}}>{{$grade->grade}}</option>
 				@endforeach
 			</select>
+		</div>
+		<div class="filter-element-vertical">
+			<label class="form-check-label" for="exampleRadios1">oktatás módja</label>
+			<div class="form-check">
+				<label class="form-check-label" for="exampleRadios1">Online oktatás</label>
+				<input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+			 </div>
+
 		</div>
 		<div class="filter-element-vertical">
 			<label for="towns">Helyszín</label>
@@ -59,4 +72,5 @@
             @endforeach
 		</div>
 	</div>
+</div>
 @endsection

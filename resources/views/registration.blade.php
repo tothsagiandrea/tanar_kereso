@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('styles')
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{{asset('css/forms.css')}}">
 @endsection
 
@@ -8,8 +9,8 @@
 <div class="registration-container">
 	<div class="input-container">
 		<form action="{{route('registerUser')}}" method="POST">
-		@csrf
-		<div class="form-title">Regisztráció</div>
+			@csrf
+			<div class="form-title">Regisztráció</div>
 			<div class="row">
 				<div class="messages">	
 					@if (session('status') && session('status') == "success")
