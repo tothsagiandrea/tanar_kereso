@@ -29,17 +29,13 @@
 			</select>
 		</div>
 		<div class="filter-element-vertical">
-			<label class="form-check-label" for="exampleRadios1">
-				oktatás módja
-			  </label>
+			<label class="form-check-label" for="exampleRadios1">oktatás módja</label>
 			<div class="form-check">
-				<label class="form-check-label" for="exampleRadios1">
-					Online oktatás
-				  </label>
+				<label class="form-check-label" for="exampleRadios1">Online oktatás</label>
 				<input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-			  </div>
+			 </div>
 			
-		  </div>
+		</div>
 		<div class="filter-element-vertical">
 			<label for="towns">Helyszín</label>
 			<select id="towns" name="towns">
