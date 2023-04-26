@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Redirect;
 class RouteController extends Controller
 {
     public function showIndex () : View {
-        $teachers = Teacher::get();
+        $teachers = Teacher::all();
         $subjects = Subject::get();
         $grades = Grade::get();
         $towns = DB::table('towns')->orderBy('town')->get();

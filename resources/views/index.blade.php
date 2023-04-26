@@ -57,11 +57,11 @@
             <a href="#" title="Részletekért kattints a névjegykártyára.">
 				<div class="teacher-card">
 					<div class="top-strip">
-						<h2>{{ $teacher->full_name }}</h2>
+						<h2>{{ $teacher->user->name }}</h2>
 						<h3>számítástechnika, programozás</h3>
 					</div>
 					<div class="avatar">
-						<img src="{{ asset('img/user.svg')}}" alt="{{ $teacher->full_name }}">
+						<img src="{{ asset($teacher->profile_pic_path)}}" alt="{{ $teacher->user->name }}">
 					</div>
 					<div class="details">
 						<p>{{ $teacher->curriculum_vitae }}</p>

@@ -7,35 +7,30 @@
 @section('content')
 <h1>Személyes adatok</h1>
 <div class="container-fluid teachdata">
+	<h5> 
+		@isset($user)
+			{{$user->name}}
+		@endisset
+		&nbsp;-&nbsp;
+		@isset($user)
+			{{$user->email}}
+		@endisset
+	</h5>
 	@if(session("status") && (session("status") == "missing_data"))
 	<div>
 		Minden mező kitöltendő!
 	</div>
 	@endif
-	<form method="post" action="{{ route('setTeacherData') }}">
+	<form method="post" action="{{ route('setTeacherData') }}" enctype="multipart/form-data">
 		@csrf
 		<div class="row my-2">
-			<div class="col">
-				<label class="py-2" for="fullname">Teljes név</label>
-				<input type="text" id="fullname" name="fullname" class="form-control" placeholder="Név" @isset($user)
-					value="{{$user->name}}"
-				@endisset required>
-			</div>
-			<div class="col">
+			<div class="form-group">
 				<label class="py-2" for="highest_degree">Legmagasabb iskolai végzettség</label>
 				<select class="form-control" id="highest_degree" name="highest_degree" required>
 					@foreach ($qualifications as $qualification)
 						<option value="{{ $qualification->id }}">{{ $qualification->qualification }}</option>
 					@endforeach
 				</select>
-			</div>
-		</div>
-		<div class="row my-2">
-			<div class="form-group">
-				<label class="py-2" for="exampleFormControlInput1">Email address</label>
-				<input type="email" class="form-control" id="email" placeholder="example@example.hu" @isset($user)
-				value="{{$user->email}}"
-			@endisset disabled>
 			</div>
 		</div>
 		<div class="row my-2">

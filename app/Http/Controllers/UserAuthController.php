@@ -143,7 +143,6 @@ class UserAuthController extends Controller
             {
                 if ($user->teacher == null)
                 {
-                    //$this->getTeacherData();
                     return (new RouteController)->showTeacherDataPage();
                 }
             }
