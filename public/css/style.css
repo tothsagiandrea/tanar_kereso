@@ -20,8 +20,10 @@ html, body {
     width: 100%;
     margin: 0 !important;
     padding: 0 !important;
-    background: url("../img/hatter.png");
-    background-color: rgba(255, 255, 255, 0.85);
+    background: url("../img/hatter.png") center center;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-color: rgba(216, 216, 216, 0.85);
 }
 /*.content-container
 {
@@ -115,12 +117,14 @@ img.header-image {
     max-width: 100%;
     min-height:  100vh;
     margin: 0;
+    padding-top: 25px;
     background: rgba(255, 255, 255, 0.7);
 }
 
 #logolablec {
-    width: 50px;
-    height: 50px;
+    max-width: 120px;
+    max-height: 120px;
+    margin-right: 30px;
 }
 
 #section1 {
@@ -184,15 +188,20 @@ h2 {
 }
 .infolink
 {
-    background-color: #258ae9a6;
-    text-align: center;
-    border-radius: 15px;
+    text-align: left;
 }
 
+#szurogomb
+{
+    background-color: #4da6ca;
+    align-items: center;
+}
 
 .teacher-container {
-    width: 100%;
-    margin:0 ;
+    max-width: 500px;
+    margin:auto ;
+    justify-content: center;
+
 }
 
 .filter-container {
@@ -201,11 +210,15 @@ h2 {
     flex-wrap: wrap;
     gap: 2em;
     width: 100%;
-    margin: 0;
+    margin: auto;
     padding: 1em;
-    background-color: rgb(130, 130, 130);
-    color: white;
+    background: url("../img/kereso.png");
+    color: rgb(253, 251, 251);
     align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 1px solid;
+    border-color: #080808c9;
 }
 
 .filter-container h3 {
@@ -230,7 +243,26 @@ h2 {
 .filter-container select {
     min-width: 250px;
 }
-
+#subject
+{
+    max-width: 50px;
+}
+#grades
+{
+    max-width: 50px;
+}
+#towns
+{
+    max-width: 50px;
+}
+#subject3
+{
+    max-width: 50px;
+}
+.btszures
+{
+    margin-top: 25px;
+}
 .teacher-list {
     display: flex;
     flex-direction: row;
@@ -481,11 +513,20 @@ h2 {
     padding: 20px;
   }
 
-  /* Add a card effect for articles */
-  .card {
-    background-color: rgba(29, 145, 204, 0.426);
+
+  .card-szuro {
+
     padding: 20px;
     margin-top: 20px;
+  }
+
+  .bg-light-gray {
+    background-color: lightgray;
+  }
+
+  .text-justify {
+    text-align: justify;
+    text-indent: 2px;
   }
 
   /* Clear floats after the columns */

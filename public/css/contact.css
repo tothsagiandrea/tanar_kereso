@@ -36,7 +36,7 @@
     height: 600px;
     max-width: 800px;
 }
-  
+
 
 @media screen and (max-width: 375px) {
 }
@@ -166,7 +166,7 @@ select[multiple] {
 optgroup::before {
     width: fit-content;
     position: relative;
-    content: '\2227 '; 
+    content: '\2227 ';
 }*/
 
 .checkbox_container {

@@ -4,8 +4,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
-        <br>
+    <div class="container white-background pt-2">
         <h1>Adatvédelmi nyilatkozat</h1>
 
         <h3>Az adatkezelési tájékoztató célja</h3>
@@ -52,9 +51,9 @@
         <p>
             Regisztrációs során megadandó személyes adatok:
 
-            <ul role="list">
-            <li>Teljes név</li>
-            <li>Emailcím</li>
+            <ul class="aszf-lista" role="list">
+                <li>Teljes név</li>
+                <li>Emailcím</li>
             </ul>
 
         </p>
@@ -62,12 +61,12 @@
         <p>
             A publikus profil kitöltése során elkért adatok:
 
-            <ul role="list">
-            <li>Név</li>
-            <li>Emailcím</li>
-            <li>Telefonszám</li>
-            <li> Nem</li>
-            <li>Település</li>
+            <ul class="aszf-lista" role="list">
+                <li>Név</li>
+                <li>Emailcím</li>
+                <li>Telefonszám</li>
+                <li> Nem</li>
+                <li>Település</li>
             </ul>
         </p>
 
@@ -77,11 +76,11 @@
             Az Adatkezelő a személyes adatok kezeléséhez a szolgáltatás nyújtása során alkalmazott informatikai eszközöket
             úgy választja meg és üzemelteti, hogy a kezelt adat:
 
-            <ul role="list">
-            <li>az arra feljogosítottak számára hozzáférhető (rendelkezésre állás); </li>
-            <li>hitelessége és hitelesítése biztosított (adatkezelés hitelessége);</li>
-            <li>változatlansága igazolható (adatintegritás);</li>
-            <li>a jogosulatlan hozzáférés ellen védett (adat bizalmassága) legyen.</li>
+            <ul class="aszf-lista" role="list">
+                <li>az arra feljogosítottak számára hozzáférhető (rendelkezésre állás); </li>
+                <li>hitelessége és hitelesítése biztosított (adatkezelés hitelessége);</li>
+                <li>változatlansága igazolható (adatintegritás);</li>
+                <li>a jogosulatlan hozzáférés ellen védett (adat bizalmassága) legyen.</li>
             </ul>
 
         </p>
@@ -95,7 +94,7 @@
         <p>
             Az Adatkezelő az adatkezelés során megőrzi:
 
-        <ul role="list">
+        <ul class="aszf-lista" role="list">
 
             <li>a titkosságot: megvédi az információt, hogy csak az férhessen hozzá, aki erre jogosult; </li>
             <li>a sértetlenséget: megvédi az információnak és a feldolgozás módszerének a pontosságát és teljességét;</li>
@@ -111,7 +110,7 @@
 
         <p><b>A sütik feladata:</b></p>
 
-        <ul role="list">
+        <ul class="aszf-lista" role="list">
             <li>információkat gyűjtenek a látogatókról és eszközeikről;</li>
             <li>megjegyzik a látogatók egyéni beállításait, amelyek felhasználásra kerül(het)nek pl. online tranzakciók
                 igénybevételekor, így nem kell újra begépelni őket;</li>
@@ -345,7 +344,7 @@
 
         <h3> Érintett jogai és jogérvényesítési lehetőségei</h3>
 
-        <ul role="list">
+        <ul class="aszf-lista" role="list">
             <p>
                 Az adatkezelés időtartamán belül Önt a Rendelet előírásai szerint az alábbi jogok illetik meg:
                 <li>a hozzájárulás visszavonásának joga</li>
@@ -384,7 +383,7 @@
             folyamatban van-e, és ha adatkezelés folyamatban van, jogosult arra, hogy:
         </p>
 
-            <ul role="list">
+            <ul class="aszf-lista" role="list">
             <li>a kezelt személyes adatokhoz hozzáférést kapjon és </li>
             <li>a következő információkról az Adatkezelő tájékoztassa</li>
             <li>az adatkezelés céljai </li>
@@ -424,7 +423,7 @@
         <p>Az érintett az alábbi indokok valamelyikének fennállása esetén jogosult arra, hogy kérésére az
             Adatkezelő indokolatlan késedelem nélkül törölje a rá vonatkozó személyes adatokat:</p>
 
-        <ul role="list">
+        <ul class="aszf-lista" role="list">
             <li>személyes adatokra már nincs szükség abból a célból, amelyből azokat gyűjtötték vagy más módon kezelték </li>
             <li>az érintett visszavonja az adatkezelés alapját képező hozzájárulását, és az adatkezelésnek nincs más jogalapja</li>
             <li>az érintett tiltakozik az adatkezelés ellen, és nincs elsőbbséget élvező jogszerű ok az adatkezelésre </li>
@@ -447,7 +446,7 @@
             Az érintett kérésére az Adatkezelő korlátozza az adatkezelést, ha az alábbi feltételek valamelyike teljesül:
         </p>
 
-        <ul role="list">
+        <ul class="aszf-lista" role="list">
             <li>az érintett vitatja a személyes adatok pontosságát, ez esetben a korlátozás arra az időtartamra </li>
             <li>vonatkozik, amely lehetővé teszi, a személyes adatok pontosságának ellenőrzését</li>
             <li>az adatkezelés jogellenes, és az érintett ellenzi az adatok törlését, és ehelyett kéri azok felhasználásának korlátozását </li>
@@ -527,8 +526,7 @@
             (a továbbiakban: Rendelet. GDPR) és a 2011. évi CXII. tv. (a továbbiakban: Infotv.) alapján.
         </P>
 
-        <button
-        class="btn btn-outline-dark vissza" type="submit">
+        <button class="btn btn-outline-dark vissza" type="submit">
         <a href="{{route('aszfPage')}}">Vissza az oldal tetejére</a>
         </button>
 
