@@ -12,7 +12,7 @@
 			@csrf
 			<div class="form-title">Regisztráció</div>
 			<div class="row">
-				<div class="messages">	
+				<div class="messages">
 					@if (session('status') && session('status') == "success")
 						Sikeres regisztráció!
 					@elseif((session('status') && session('status') == "fail") || $errors->any())
