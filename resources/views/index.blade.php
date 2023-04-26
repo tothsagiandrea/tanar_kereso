@@ -2,10 +2,6 @@
 
 @section('content')
 
-
-
-
-
 <div class="teacher-container">
 	<div class="filter-container">
 		<h3>Szűrők</h3>

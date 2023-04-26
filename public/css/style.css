@@ -20,8 +20,10 @@ html, body {
     width: 100%;
     margin: 0 !important;
     padding: 0 !important;
-    background: url("../img/hatter.png");
-    background-color: rgba(255, 255, 255, 0.85);
+    background: url("../img/hatter.png") center center;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-color: rgba(216, 216, 216, 0.85);
 }
 /*.content-container
 {
@@ -184,9 +186,7 @@ h2 {
 }
 .infolink
 {
-    background-color: #258ae9a6;
-    text-align: center;
-    border-radius: 15px;
+    text-align: left;
 }
 
 
@@ -475,11 +475,20 @@ h2 {
     padding: 20px;
   }
 
-  /* Add a card effect for articles */
+  /* Add a card effect for articles
   .card {
     background-color: rgba(29, 145, 204, 0.426);
     padding: 20px;
     margin-top: 20px;
+  } */
+
+  .bg-light-gray {
+    background-color: lightgray;
+  }
+
+  .text-justify {
+    text-align: justify;
+    text-indent: 2px;
   }
 
   /* Clear floats after the columns */
