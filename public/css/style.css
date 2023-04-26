@@ -20,6 +20,8 @@ html, body {
     width: 100%;
     margin: 0 !important;
     padding: 0 !important;
+    background: url("../img/hatter.png");
+    background-color: rgba(255, 255, 255, 0.85);
 }
 /*.content-container
 {
@@ -144,10 +146,6 @@ h3 {
     margin: 1em;
 }
 
-#carouselExampleAutoplaying {
-    width: 800px;
-    height: 500px;
-}
 h2 {
     background-color: rgba(255, 255, 255, 0.473);
     color: #302c2c;

@@ -10,7 +10,7 @@
 
 <div class="container-fluid ">
     <div class="row">
-        <div class="col-8">
+        <div class="col-lg-8 col-md-12 col-sm-12">
             <div id="carousel-container">
                 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -44,7 +44,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="flex-item-right">
                 <p class="infolink"><b>Fontosabb információk</b><br>Itt megpróbáltuk összegyűjteni a fontosabb <br>
                     információkhoz szükséges linkeket.</p>
@@ -77,7 +77,7 @@
     </article>
     <article class="row">
         <div class="col-sm-6 col-lg-4">
-            <img src="img/cikk1.png" alt="cikk1" style="height:300px" class="img-fluid img-thumbnail">
+            <img src="img/cikk1.png" alt="cikk1" class="img-fluid img-thumbnail">
             <p>
                 <b>Ha valaki</b> a barátaid vagy a családtagjaid közül magántanárt alkalmazott
                 korábban, kérj tőlük ajánlást.

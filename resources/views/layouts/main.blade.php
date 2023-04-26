@@ -56,7 +56,6 @@
 
         <main class="main-container">
             <div class="floating-container">
-                <img src="img\hatter.png" class="header-image" alt="fokep">
                 @yield('content')
             </div>
         </main>
