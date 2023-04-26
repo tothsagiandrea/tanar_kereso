@@ -189,10 +189,16 @@ h2 {
     text-align: left;
 }
 
+#szurogomb
+{
+    background-color: #4da6ca;
+    align-items: center;
+}
 
 .teacher-container {
-    width: 100%;
-    margin:0 ;
+    max-width: 500px;
+    margin:auto ;
+    justify-content: center;
 }
 
 .filter-container {
@@ -201,11 +207,12 @@ h2 {
     flex-wrap: wrap;
     gap: 2em;
     width: 100%;
-    margin: 0;
+    margin: auto;
     padding: 1em;
-    background-color: rgb(130, 130, 130);
-    color: white;
+    background-color: rgba(56, 102, 106, 0.59);
+    color: rgb(10, 10, 10);
     align-items: center;
+    justify-content: center;
 }
 
 .filter-container h3 {
@@ -230,7 +237,26 @@ h2 {
 .filter-container select {
     min-width: 250px;
 }
-
+#subject
+{
+    max-width: 50px;
+}
+#grades
+{
+    max-width: 50px;
+}
+#towns
+{
+    max-width: 50px; 
+}
+#subject3
+{
+    max-width: 50px; 
+}
+.btszures
+{
+    margin-top: 25px;
+}
 .teacher-list {
     display: flex;
     flex-direction: row;
@@ -475,12 +501,12 @@ h2 {
     padding: 20px;
   }
 
-  /* Add a card effect for articles
-  .card {
-    background-color: rgba(29, 145, 204, 0.426);
+  
+  .card-szuro {
+    
     padding: 20px;
     margin-top: 20px;
-  } */
+  } 
 
   .bg-light-gray {
     background-color: lightgray;
