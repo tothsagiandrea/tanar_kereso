@@ -107,14 +107,16 @@ class TeacherController extends Controller
             $t_lesson_type->save();
         }
 
-        for ($i = 0; $i < count($location); $i++) {
-            $t_location = new TeacherTown();
-            $t_location->teacher_id = $teacher_id;
-            $t_location->town_id = $location[$i];
+        if ($location != null) {
+            for ($i = 0; $i < count($location); $i++) {
+                $t_location = new TeacherTown();
+                $t_location->teacher_id = $teacher_id;
+                $t_location->town_id = $location[$i];
 
-            $t_location->save();
+                $t_location->save();
+            }
         }
-
+        
         for ($i = 0; $i < count($subjects); $i++) {
             $t_subject = new GradeSubjectTeacher();
             $t_subject->teacher_id = $teacher_id;

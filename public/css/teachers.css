@@ -147,3 +147,13 @@
     padding: 0.75em;
     text-align: justify;
 }
+
+@media screen and (max-width: 450px) {
+    .teacher-card {
+        width: 96vw;
+    }
+
+    .top-strip {
+        width: 96vw;
+    }
+}

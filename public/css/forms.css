@@ -138,6 +138,10 @@ optgroup::before {
     gap: 1em;
 }
 
+.form_messages {
+    display: none;
+}
+
 @media screen and (max-width: 375px) {
     .login-main-container, .registration-container {
         width: 97%;

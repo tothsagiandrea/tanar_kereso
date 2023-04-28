@@ -21,7 +21,10 @@
 		Minden mező kitöltendő!
 	</div>
 	@endif
-	<form method="post" action="{{ route('setTeacherData') }}" enctype="multipart/form-data">
+	<div class="form_messages">
+
+	</div>
+	<form id="teacher_data_form" method="post" action="{{ route('setTeacherData') }}" enctype="multipart/form-data">
 		@csrf
 		<div class="row my-2">
 			<div class="form-group">
@@ -37,7 +40,7 @@
 			<div class="form-group">
 				<label class="py-2" for="lesson_type">Oktatás módja (CTRL lenyomásával többet is választhat)</label>
 				<div class="form_element_container">
-					<select multiple id="lesson_type" class="form-control horizontal_layout" name="lesson_type[]" required>
+					<select multiple id="lesson_type" class="form-control" name="lesson_type[]" required>
 					@foreach ($lesson_types as $lesson_type)
 						<option value="{{ $lesson_type->id }}">{{ $lesson_type->lesson_type }}</option>
 					@endforeach
@@ -45,7 +48,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row my-2">
+		<div class="row my-2 location-row">
 			<div class="form-group">
 				<label class="py-2" for="location">Válassza ki a preferált várost/kerületet (CTRL lenyomásával többet is választhat)</label>
 				<select multiple class="form-control" id="location" name="location[]">
@@ -115,4 +118,8 @@
 	</form>
 
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{asset('js/teacherdata.js')}}"></script>
 @endsection
