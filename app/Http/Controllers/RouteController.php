@@ -87,18 +87,8 @@ class RouteController extends Controller
     }
 
     public function showTeacherPage (Request $request) : View {
-        $teacher = Teacher::find($request->id);
-        $user = $teacher->user;
-
-        $subject_gardes = GradeSubjectTeacher::where('teacher_id', $request->id);
-        $subjects_gardes = $subject_gardes->groupBy(function ($subject) {
-            return $subject->group->subject; // or whatever you can use as a key
-        });
-
-        dd($subjects_gardes);
-
-
-        return view('teacher', compact('teacher', 'user'));
+        $teacher = Teacher::with(['grade_subjects.grade', 'grade_subjects.subject', 'user', 'towns.county'])->find($request->id);
+        return view('teacher', compact('teacher'));
     }
 
     public function showAszf () : View {
