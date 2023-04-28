@@ -1,11 +1,11 @@
 /* LOGIN FORM */
 
-.login-main-container, .registration-container {
+.login-main-container, .registration-container, .changedata-container {
     margin: 25px auto;
     padding: 0;
     max-width: 500px;
     width: 100%;
-    height: 672px;
+    height: 692px;
     border: thin solid black;
     border-radius: 25px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
@@ -17,10 +17,14 @@
     height: 792px;
 }
 
+.changedata-container {
+    height: 842px;
+}
+
 .input-container {
     max-width: 500px;
     width: 100%;
-    height: 370px;
+    height: 390px;
     margin-top: 300px;
     background-color: white;
     border-radius: 50% 0 25px 25px;
@@ -31,17 +35,22 @@
     height: 490px;
 }
 
+.changedata-container .input-container {
+    height: 540px;
+}
+
 .form-title {
     text-align: center;
     display: block;
+    margin: 0.8em auto 0.5em;
     color: rgb(6, 81, 119);
-    font-size: 2.5em;
+    font-size: 1.8em;
     text-transform: uppercase;
     font-weight: 600;
     text-shadow: 3px 3px 0px #6661837e;
 }
 
-.login-form input, .registration-container input, .registration-container select {
+.login-form input, .registration-container input, .changedata-container input, .registration-container select {
     width: 20rem;
     display: block;
     margin: 0.3em auto;
@@ -55,13 +64,13 @@
     margin: 0;
 }
 
-.login-form a, .registration-container a {
+.login-form a, .registration-container a, .changedata-container a {
     display: initial;
     width: fit-content;
     margin: 0.7em 0;
 }
 
-.login-form .row, .registration-container .row {
+.login-form .row, .registration-container .row, .changedata-container .row {
     justify-content: center;
     align-items: center;
 }
@@ -73,7 +82,7 @@
     margin: 0.5em;
 }
 
-.login-form input[type="submit"], .registration-container input[type="submit"] {
+.login-form input[type="submit"], .registration-container input[type="submit"], .changedata-container input[type="submit"] {
     display: initial;
     width: fit-content;
     height: fit-content;
