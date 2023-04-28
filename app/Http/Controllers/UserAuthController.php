@@ -15,18 +15,14 @@ use Illuminate\Support\Str;
 
 use App\Models\User;
 use App\Models\UserGroup;
-use App\Models\Teacher;
-use App\Models\Qualification;
-use App\Models\LessonType;
-use App\Models\Subject;
-use App\Models\County;
-use App\Models\Town;
 
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserLoginRequest;
-use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\UserDataRequest;
+use App\Http\Requests\UserPasswordRequest;
 
 use App\Http\Controllers\RouteController;
+use Illuminate\Support\Facades\Storage;
 
 class UserAuthController extends Controller
 {
@@ -150,6 +146,65 @@ class UserAuthController extends Controller
         }
 
         return redirect()->back()->with('status', __('These credentials do not match our records.'));
+    }
+
+    /* *** FUNCTIONS FOR CHANGING USER DATA *** */
+
+    public function showChangeUserDataPage(): View {
+        $user = auth()->user();
+
+        return view('changeuserdata', compact('user'));
+    }
+
+    public function changeUserData(UserDataRequest $request) {
+        
+        $id = auth()->id();
+        
+        $user = User::find($id);
+ 
+        $user->name = $request->name;
+        $user->email = $request->email;
+ 
+        if ($user->save()) {
+            return redirect()->back()->with('status', 'success');
+        } else {
+            return redirect()->back()->with('status', 'fail');
+        }
+    }
+
+    public function changeUserPassowrd(UserPasswordRequest $request) {
+        
+        $id = auth()->id();
+        
+        $user = User::find($id);
+ 
+        $user->password = Hash::make($request->password);
+ 
+        if ($user->save()) {
+            return redirect()->back()->with('status', 'pwsuccess');
+        } else {
+            return redirect()->back()->with('status', 'fail');
+        }
+    }
+
+    /* *** DELETING USER FUNCTIONS *** */
+
+    public function showDeleteUserPage(): View {
+        return view('deleteregistration');
+    }
+
+    public function deleteUser(Request $request) {
+        $user = auth()->user();
+
+        $current_file = $user->teacher->profile_pic_path;
+        Storage::delete('public/profile_pics/'.$current_file);
+        
+        User::destroy($user->id);
+        
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
     }
 
     /* *** USER LOGOUT *** */

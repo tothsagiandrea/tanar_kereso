@@ -45,8 +45,12 @@
                             Profilom
                         </button>
                         <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{route('logoutUser')}}">Kilépés</a></li>
-                        <li><a class="dropdown-item" href="{{route('teacherDataPage')}}">Adatok módosítása</a></li>
+                            <li><a class="dropdown-item" href="{{route('teacherDataPage')}}">Adatok módosítása</a></li>
+                            <li><a class="dropdown-item" href="{{route('changeUserDataPage')}}">Alapadatok módosítása</a></li>
+                            <hr>
+                            <li><a class="dropdown-item" href="{{route('deleteUserPage')}}">Regisztráció törlése</a></li>
+                            <hr>
+                            <li><a class="dropdown-item" href="{{route('logoutUser')}}">Kilépés</a></li>
                         </ul>
                     </div>
                     @endauth
