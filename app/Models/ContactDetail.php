@@ -13,12 +13,11 @@ class ContactDetail extends Model
     protected $fillable = [
         'contact_detail',
         'is_public',
-        'contact_type',
-        'user'
+        'contact_type_id',
+        'user_id'
     ];
 
-    public function contactType():HasOne
-    {
-        return $this->hasOne(ContactType::class,'contact_type');
+    public function contact_type(): HasOne {
+        return $this->hasOne(ContactType::class);
     }
 }

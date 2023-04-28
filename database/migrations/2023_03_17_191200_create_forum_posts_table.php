@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->text('post');
             $table->bigInteger('answer_to')->nullable();
-            $table->foreignId('user')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('topic')->references('id')->on('forum_topics')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('topic_id')->references('id')->on('forum_topics')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
 
             $table->charset = 'utf8mb4';

@@ -19,7 +19,11 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array<int, string>
      */
-
+    protected $fillable = [
+        'name',
+        'email',
+        'user_group_id'
+    ];
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -39,13 +43,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function teacher(): HasOne
-    {
-        return $this->hasOne(Teacher::class, 'user');
+    public function teacher(): HasOne {
+        return $this->hasOne(Teacher::class);
     }
 
-    public function userGroup(): BelongsTo
-    {
-        return $this->belongsTo(UserGroup::class, 'user_group');
+    public function user_group(): BelongsTo {
+        return $this->belongsTo(UserGroup::class);
     }
 }

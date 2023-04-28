@@ -16,6 +16,6 @@ class Qualification extends Model
 
     public function teachers():HasMany
     {
-        return $this->hasMany(Teacher::class, 'qualification');
+        return $this->hasMany(Teacher::class);
     }
 }

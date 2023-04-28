@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Town extends Model
@@ -14,15 +15,15 @@ class Town extends Model
 
     protected $fillable = [
         'town',
-        'county'
+        'county_id'
     ];
 
     public function county(): BelongsTo {
         return $this->belongsTo(County::class);
     }
     
-    public function teacher(): HasMany
+    public function teachers(): BelongsToMany
     {
-        return $this->hasMany(Teacher::class, 'teacher');
+        return $this->belongsToMany(Teacher::class);
     }
 }

@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('styles')
+<link rel="stylesheet" href="{{asset('css/teachers.css')}}">
+@endsection
+
 @section('content')
 
 <div class="teacher-container">
@@ -54,7 +58,7 @@
 				</div>
 			  </div>
 			</div>
-		
+	</div>
 		
 	<div class="teacher-list-container">
 		<div class="teacher-list">
@@ -62,16 +66,19 @@
             <a href="#" title="Részletekért kattints a névjegykártyára.">
 				<div class="teacher-card">
 					<div class="top-strip">
-						<h2>{{ $teacher->user->name }}</h2>
-						<h3>számítástechnika, programozás</h3>
+						<h2>{{ $teacher->first()->name }}</h2>
+						{{ $teacher->implode('subject', ', ') }}
 					</div>
 					<div class="avatar">
-						<img src="{{ asset($teacher->profile_pic_path)}}" alt="{{ $teacher->user->name }}">
+						@php
+							$path = $teacher->first()->profile_pic_path
+						@endphp 
+						<img src="{{ url("storage/profile_pics/$path") }}" alt="">
 					</div>
 					<div class="details">
-						<p>{{ $teacher->curriculum_vitae }}</p>
+						<p>{{ $teacher->first()->curriculum_vitae }}</p>
 					</div>
-					<a href="{{route('teacherPage', $teacher->id)}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
+					<a href="{{route('teacherPage', $teacher->first()->id)}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
 				</div>
 			</a>
             @endforeach

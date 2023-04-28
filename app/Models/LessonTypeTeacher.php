@@ -5,18 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class TeachedSubject extends Pivot
+class LessonTypeTeacher extends Pivot
 {
     use HasFactory;
-
-    protected $table = 'teached_subjects';
-
-    protected $foreignKey = 'subject_grade';
-    protected $relatedKey = 'teacher';
     public $incrementing = true;
 
+    protected $table = 'lesson_type_teacher';
+
     protected $fillable = [
-        'teacher',
-        'subject_grade'
+        'teacher_id',
+        'lesson_type_id'
     ];
 }

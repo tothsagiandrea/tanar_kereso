@@ -12,7 +12,7 @@ class ForumPost extends Model
     protected $fillable = [
         'post',
         'answer_to',
-        'user',
-        'topic'
+        'user_id',
+        'topic_id'
     ];
 }

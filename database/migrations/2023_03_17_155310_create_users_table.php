@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->foreignId('user_group')->references('id')->on('user_groups')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_group_id')->references('id')->on('user_groups')->onUpdate('cascade')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
 

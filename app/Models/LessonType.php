@@ -16,6 +16,6 @@ class LessonType extends Model
 
     public function teacher(): HasMany
     {
-        return $this->hasMany(Teacher::class, 'teacher');
+        return $this->hasMany(Teacher::class);
     }
 }

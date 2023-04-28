@@ -15,8 +15,8 @@ class CreateGroupPermissionsTable extends Migration
     {
         Schema::create('group_permissions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('group')->references('id')->on('user_groups')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('permission')->references('id')->on('permissions')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_group_id')->references('id')->on('user_groups')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('permission_id')->references('id')->on('permissions')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
 
             $table->charset = 'utf8mb4';

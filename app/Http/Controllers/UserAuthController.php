@@ -44,7 +44,7 @@ class UserAuthController extends Controller
 
         $user->email = $request->email;
         $user->name = $request->name;
-        $user->user_group = $request->role;
+        $user->user_group_id = $request->role;
         $user->password = Hash::make($request->password);
 
         if ($user->save()) {
@@ -139,7 +139,7 @@ class UserAuthController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
             $request->session()->regenerate();
             $user = auth()->user();
-            if ($user->userGroup->name == 'tanár')
+            if ($user->user_group->name == 'tanár')
             {
                 if ($user->teacher == null)
                 {

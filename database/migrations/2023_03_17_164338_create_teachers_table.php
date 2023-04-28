@@ -17,7 +17,7 @@ return new class extends Migration
             $table->smallInteger('hourly_rate');
             $table->string('profile_pic_path', 500)->nullable();
             $table->string('profile_video_path', 500)->nullable();
-            $table->foreignId('user')->references('id')->on('users')->onUpdate('cascade')->onDelete;
+            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete;
             $table->timestamps();
 
             $table->charset = 'utf8mb4';

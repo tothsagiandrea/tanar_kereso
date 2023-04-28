@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('forum_topics', function (Blueprint $table) {
             $table->id();
             $table->string('title', 400);
-            $table->foreignId('user')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
 
             $table->charset = 'utf8mb4';

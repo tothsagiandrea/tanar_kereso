@@ -9,6 +9,8 @@ use Psy\Readline\Hoa\Console;
 use App\Http\Controllers\TeacherController;
 
 use App\Models\Grade;
+use App\Models\GradeSubject;
+use App\Models\GradeSubjectTeacher;
 use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\Town;
@@ -20,10 +22,39 @@ use Illuminate\Support\Facades\Redirect;
 class RouteController extends Controller
 {
     public function showIndex () : View {
-        $teachers = Teacher::all();
-        $subjects = Subject::get();
-        $grades = Grade::get();
-        $towns = DB::table('towns')->orderBy('town')->get();
+        $subjects = Subject::all();
+        $grades = Grade::all();
+        $towns = Town::orderBy('town')->get();
+
+        $query = DB::table('teachers')
+                                ->join('grade_subject_teacher', 'teachers.id', '=', 'grade_subject_teacher.teacher_id')
+                                ->join('grade_subject', 'grade_subject_teacher.grade_subject_id', '=', 'grade_subject.id')
+                                ->join('grades', 'grade_subject.grade_id', '=', 'grades.id')
+                                ->join('subjects', 'grade_subject.subject_id', '=', 'subjects.id')
+                                ->join('users', 'teachers.user_id', '=', 'users.id')
+                                ->select('teachers.*', 'grades.grade', 'subjects.subject', 'users.email', 'users.name')
+                                ->groupBy('teachers.id', 'subjects.subject')
+                                ->get();
+        
+
+        /*$query = DB::table('teachers')
+                            ->select('teachers.*', 'grades.grade', 'subjects.subject', 'users.email', 'users.name')
+                            ->join(DB::table('grade_subject_teacher')
+                            ->join('grade_subject', 'grade_subject_teacher.grade_subject_id', '=', 'grade_subject.id')
+                            ->join('grades', 'grade_subject.grade_id', '=', 'grades.id')
+                            ->join('subjects', 'grade_subject.subject_id', '=', 'subjects.id')
+                            ->join('users', 'teachers.user_id', '=', 'users.id')
+                            ->groupBy('subjects.subject'), function($join) {
+                                $join->on('teachers.id', '=', 'grade_subject_teacher.teacher_id');
+                            })
+                            ->groupBy('teachers.id')
+                            ->get();*/
+
+        /*$query = DB::raw(
+            "SELECT * FROM Teachers
+            INNER JOIN grade_subject_teacher"
+        )->get;*/
+        $teachers = $query->groupBy('id');
         return view('index', compact('teachers', 'subjects', 'grades', 'towns'));
     }
 
@@ -56,9 +87,18 @@ class RouteController extends Controller
     }
 
     public function showTeacherPage (Request $request) : View {
-        $teachers = Teacher::get();
-        $teacher = $teachers->find($request->id);
-        return view('teacher', compact('teacher'));
+        $teacher = Teacher::find($request->id);
+        $user = $teacher->user;
+
+        $subject_gardes = GradeSubjectTeacher::where('teacher_id', $request->id);
+        $subjects_gardes = $subject_gardes->groupBy(function ($subject) {
+            return $subject->group->subject; // or whatever you can use as a key
+        });
+
+        dd($subjects_gardes);
+
+
+        return view('teacher', compact('teacher', 'user'));
     }
 
     public function showAszf () : View {

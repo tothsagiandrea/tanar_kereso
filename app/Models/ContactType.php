@@ -14,8 +14,7 @@ class ContactType extends Model
         'contact_type'
     ];
 
-    public function contactDetails(): HasMany
-    {
-        return $this->hasMany(ContactType::class, 'contact_type');
+    public function contact_details(): HasMany {
+        return $this->hasMany(ContactDetail::class);
     }
 }

@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('grades_for_subject', function (Blueprint $table) {
+        Schema::create('grade_subject', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('grade')->references('id')->on('grades')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('subject')->references('id')->on('subjects')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('grade_id')->references('id')->on('grades')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('subject_id')->references('id')->on('subjects')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
 
             $table->charset = 'utf8mb4';
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('grades_for_subject');
+        Schema::dropIfExists('grade_subject');
     }
 };

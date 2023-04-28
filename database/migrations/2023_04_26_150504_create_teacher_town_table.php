@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('teacher_lesson_types', function (Blueprint $table) {
+        Schema::create('teacher_town', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('teacher')->references('id')->on('teachers')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('lesson_type')->references('id')->on('lesson_types')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('teacher_id')->references('id')->on('teachers')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('town_id')->references('id')->on('towns')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
 
             $table->charset = 'utf8mb4';
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('teacher_lesson_types');
+        Schema::dropIfExists('teacher_town');
     }
 };
