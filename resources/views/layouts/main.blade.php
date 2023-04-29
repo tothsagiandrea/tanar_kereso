@@ -46,7 +46,9 @@
                             Profilom
                         </button>
                         <ul class="dropdown-menu">
+                            @if(auth()->user()->user_group->name == "tanár")
                             <li><a class="dropdown-item" href="{{route('teacherDataPage')}}">Adatok módosítása</a></li>
+                            @endif
                             <li><a class="dropdown-item" href="{{route('changeUserDataPage')}}">Alapadatok módosítása</a></li>
                             <hr>
                             <li><a class="dropdown-item" href="{{route('deleteUserPage')}}">Regisztráció törlése</a></li>
