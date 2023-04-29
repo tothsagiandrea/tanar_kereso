@@ -8,6 +8,8 @@
 
 }
 
+/* *** FILTERING TEACHERS *** */
+
 .filter-container {
     /*display: flex;*/
     flex-direction: row;
@@ -67,6 +69,8 @@
 {
     margin-top: 25px;
 }
+
+/* *** LIST OF TEACHERS *** */
 
 .teacher-list {
     margin: 1.5em 0;
@@ -129,13 +133,16 @@
     border: solid 5px white;
     border-radius: 50%;
     overflow: hidden;
-    margin-top: -50px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: -0px -8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.teacher-list .avatar {
+    margin-top: -50px;
 }
 
 .avatar img {
@@ -147,6 +154,84 @@
 .teacher-card .details {
     padding: 0.75em;
     text-align: justify;
+}
+
+
+/* *** TEACHER PAGE STYLING *** */
+
+.teacher-page {
+    display: flex;
+    flex-direction: column;
+    margin: 1em auto;
+    padding: 0;
+    background-color: #8bc3fc;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.teacher-main-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 0.6em;
+    padding: 0.6em;
+    background-color: white;
+    color: #202c40;
+    gap: 0.6em;
+    min-height: 700px;
+}
+
+.teacher-left-container {
+    flex-grow: 1;
+    margin: 0.6em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    justify-content: start;
+}
+
+.teacher-contacts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.6em;
+    align-items: center;
+    padding: 1em 0;
+    border-bottom: 3px solid #eee;
+}
+
+.teacher-contacts.location {
+    align-items: flex-start;
+}
+
+.teacher-contacts p {
+    margin: 0;
+    padding: 0;
+}
+
+.teacher-subjects {
+    margin-top: 1.2em;
+}
+
+.teacher-right-container {
+    flex-grow: 3;
+    padding: 1.2em;
+    border-left: 3px solid #eee;
+}
+
+.teacher-right-container h5 {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.teacher-cv {
+    margin: 1.2em 0 0 0;
+    padding: 0;
+}
+
+.button-container {
+    margin: 1.2em auto;
 }
 
 @media screen and (max-width: 450px) {

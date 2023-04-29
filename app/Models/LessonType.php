@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class LessonType extends Model
 {
@@ -14,8 +14,8 @@ class LessonType extends Model
         'lesson_type'
     ];
 
-    public function teacher(): HasMany
+    public function teacher(): BelongsToMany
     {
-        return $this->hasMany(Teacher::class);
+        return $this->belongsToMany(Teacher::class)->using(LessonTypeTeacher::class);
     }
 }
