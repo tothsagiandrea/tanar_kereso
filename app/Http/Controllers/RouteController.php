@@ -87,8 +87,9 @@ class RouteController extends Controller
     }
 
     public function showTeacherPage (Request $request) : View {
+        $user = auth()->user();
         $teacher = Teacher::with(['grade_subjects.grade', 'grade_subjects.subject', 'user', 'towns.county'])->find($request->id);
-        return view('teacher', compact('teacher'));
+        return view('teacher', compact('teacher', 'user'));
     }
 
     public function showAszf () : View {

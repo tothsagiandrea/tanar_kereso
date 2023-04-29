@@ -76,7 +76,9 @@
 						<img src="{{ url("storage/profile_pics/$path") }}" alt="">
 					</div>
 					<div class="details">
-						<p>{{ $teacher->first()->curriculum_vitae }}</p>
+						<p>Óradíj</p>
+						<img src="{{ asset('img/banking.png')}}" class="iconbanking" alt="icon">
+						<p>{{ $teacher->first()->hourly_rate }} Ft/óra</p>
 					</div>
 					<a href="{{route('teacherPage', $teacher->first()->id)}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
 				</div>

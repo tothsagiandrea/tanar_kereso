@@ -65,7 +65,7 @@
 		<div class="row my-2">
 			<div class="form-group">
 				<label class="py-2" for="subjects">Mely tantárgyakat szeretné tanítani? (CTRL lenyomásával többet is választhat)</label>
-				<select multiple class="form-control" id="subjects" name="subjects[]">
+				<select multiple class="form-control" id="subjects" name="subjects[]" required>
 					@foreach ($grades as $grade)
 					<optgroup label="{{ $grade->grade }}">
 						@foreach ($grade->subjects as $subject)
@@ -85,7 +85,7 @@
 		<div class="row my-2">
 			<div class="form-group">
 				<label class="py-2" for="cv_text">Szakmai önéletrajz</label>
-				<textarea class="form-control" id="cv_text" name="cv_text" required></textarea>
+				<textarea class="form-control ckeditor" id="cv_text" name="cv_text" required></textarea>
 			</div>
 		</div>
 		<div class="row my-2">
@@ -122,4 +122,13 @@
 
 @section('scripts')
 <script src="{{asset('js/teacherdata.js')}}"></script>
+@endsection
+
+@section('ckeditor')
+<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+       $('.ckeditor').ckeditor();
+    });
+</script>
 @endsection

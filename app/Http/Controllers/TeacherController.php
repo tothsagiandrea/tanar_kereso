@@ -35,11 +35,6 @@ class TeacherController extends Controller
 
     private function getSubjectGrades($data) {
         $subject_grades = [];
-        /* for ($i = 0; $i < count($data); $i++) {
-            $ids = explode('_', $data[$i]);
-            $row = DB::table('grades_for_subject')->where('subject', $ids[0])->where('grade', $ids[1])->get('id');
-            $subject_grades[] = $row[0]->id;
-        } */
         foreach ($data as $grade_subject_id){
             $ids = explode('_', $grade_subject_id);
             $row = GradeSubject::where('subject_id', $ids[0])->where('grade_id', $ids[1])->get('id');
@@ -54,7 +49,6 @@ class TeacherController extends Controller
         }
 
         $user = auth()->user();
-        // $teacher = Teacher::count('user', $user->id);
         $teacher = $user->teacher;
         $file_name = $user->id.'.'.$file->extension();
 
@@ -116,7 +110,7 @@ class TeacherController extends Controller
                 $t_location->save();
             }
         }
-        
+
         for ($i = 0; $i < count($subjects); $i++) {
             $t_subject = new GradeSubjectTeacher();
             $t_subject->teacher_id = $teacher_id;
@@ -124,5 +118,7 @@ class TeacherController extends Controller
 
             $t_subject->save();
         }
+
+        return redirect()->route('teacherPage', $teacher_id);
     }
 }

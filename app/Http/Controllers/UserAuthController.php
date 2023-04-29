@@ -59,14 +59,13 @@ class UserAuthController extends Controller
         if ($verified) {
             return view('verifiedemail');
         }
-        return redirect()->back();
+        return view('/');
     }
     
     public function verifyEmail(EmailVerificationRequest $request) {
         $request->fulfill();
-        $verified = true;
 
-        $this->showVerifiedEmailPage($verified);
+        $this->showVerifiedEmailPage(true);
     }
 
     public function sendEmailNotification(Request $request) {    

@@ -73,4 +73,5 @@
         </footer>
         @yield('scripts')
     </body>
+    @yield('ckeditor')
 </html>
