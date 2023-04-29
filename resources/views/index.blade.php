@@ -11,6 +11,7 @@
 		<div class="filter-elements">
 			<label for="subject">Tantárgyak</label>
 			<select id="subject" name="subject">
+				<option selected value="" disabled>Válasszon tantárgyat!</option>
 				@foreach ($subjects as $subject)
 				<option value={{$subject->id}}>{{$subject->subject}}</option>
 				@endforeach
@@ -19,6 +20,7 @@
 		<div class="filter-elements">
 			<label for="grades">Tanulási szint</label>
 			<select id="grades" name="grades">
+				<option selected value="" disabled>Válasszon tanulási szintet!</option>
 				@foreach ($grades as $grade)
 				<option value={{$grade->id}}>{{$grade->grade}}</option>
 				@endforeach
@@ -34,6 +36,7 @@
 		<div class="filter-elements">
 			<label for="towns">Helyszín</label>
 			<select id="towns" name="towns">
+				<option selected value="" disabled>Válasszon helyszínt!</option>
 				@foreach ($towns as $town)
 				<option value={{$town->id}}>{{$town->town}}</option>
 				@endforeach

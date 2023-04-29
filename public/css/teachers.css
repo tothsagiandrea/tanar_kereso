@@ -1,9 +1,7 @@
-
-
 .teacher-container {
     max-width: 100%;
-    padding: 1%;
     margin: 1em auto;
+    margin-top: 0;
     justify-content: center;
 
 }
@@ -16,7 +14,7 @@
     flex-wrap: wrap;
     gap: 3em;
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
     padding: 0.8em;
     background: url("../img/kereso.png");
     color: rgb(253, 251, 251);
@@ -33,11 +31,6 @@
     text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-#btn-filter {
-    background-color: #4da6ca;
-    align-items: center;
-}
-
 .filter-elements {
     display: flex;
     flex-direction: column;
@@ -52,6 +45,14 @@
 .filter-container select {
     width: 250px;
     padding: 0.3em;
+}
+
+.btn-filter {
+    align-items: center;
+}
+
+option[value=""][disabled] {
+    display: none;
 }
 
 /* *** LIST OF TEACHERS *** */
@@ -145,7 +146,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 1.75em;
+    padding: 2.75em;
     height: 130px;
 }
 
@@ -266,7 +267,11 @@ ul.subject-grades {
 }
 
 @media screen and (max-width: 450px) {
-
+    .filter-container select {
+        width: 80%;
+        margin: 0 10%;
+        padding: 0.3em;
+    }
     .teacher-list {
         gap: 0;
     }
@@ -281,8 +286,15 @@ ul.subject-grades {
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 550px) {
+    .filter-container select {
+        width: 80%;
+        margin: 0 10%;
+        padding: 0.3em;
+    }
+}
 
+@media screen and (max-width: 1000px) {
     .teacher-container {
         padding: 0;
     }
@@ -297,5 +309,16 @@ ul.subject-grades {
 
     .teacher-card {
         margin: 0.8em auto;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .btn-filter {
+        display: block;
+        margin: 0 40%;
+    }
+    
+    .filter-container {
+        gap: 0.9em;
     }
 }

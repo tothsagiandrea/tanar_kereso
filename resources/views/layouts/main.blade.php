@@ -16,7 +16,7 @@
 
     <body>
         <header>
-            <img src="{{ url('img\fejlec.png') }}" class="header-fejlec" style="width: 100%" alt="fejlec">
+            <img src="{{ url('img\fejlec.png') }}">
         </header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
