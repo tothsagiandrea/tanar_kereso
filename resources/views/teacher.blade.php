@@ -54,21 +54,23 @@
 						</span>
 						<p>{{ $teacher->hourly_rate }} Ft/óra</p>
 					</div>
-					<div class="teacher-subjects">
-						<h5>Tanított tantárgyak</h5>
-						@foreach($teacher->grade_subjects->unique('subject') as $subject) 
-						<div class="teached-subject">{{ $subject->subject->subject }}</div>
-						<ul class="subject-grades">
-						@foreach($teacher->grade_subjects as $grade_subject)
-							@if($grade_subject->subject == $subject->subject)
-							<li>{{ $grade_subject->grade->grade }}</li>
-							@endif                    
-						@endforeach
-						</ul>
-						@endforeach
-					</div>
 				</div>
 				<div class="teacher-right-container">
+					<div class="teacher-subjects">
+						<h5>Tanított tantárgyak</h5>
+						<div>
+							@foreach($teacher->grade_subjects->unique('subject') as $subject) 
+							<div class="teached-subject">{{ $subject->subject->subject }}</div>
+							<ul class="subject-grades">
+							@foreach($teacher->grade_subjects as $grade_subject)
+								@if($grade_subject->subject == $subject->subject)
+								<li>{{ $grade_subject->grade->grade }}</li>
+								@endif                    
+							@endforeach
+							</ul>
+							@endforeach
+						</div>
+					</div>
 					<h5>Rólam</h5>
 					<div class="teacher-cv">
 						{!! $teacher->curriculum_vitae !!}
