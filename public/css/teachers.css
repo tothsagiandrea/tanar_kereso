@@ -66,6 +66,17 @@ option[value=""][disabled] {
     gap: 2em;
 }
 
+.message_container {
+    display: none;
+    width: 97%;
+    max-width: 600px;
+    background-color: #fff;
+    color: #292b2e;
+    text-align: center;
+    margin: 2em auto;
+    padding: 1em;
+}
+
 .teacher-card-a {
     color: unset;
     text-decoration: none;

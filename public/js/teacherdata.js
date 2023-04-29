@@ -44,12 +44,15 @@ $( document ).ready(function(){
 
     $('button.btn-filter').on('click', function() {
 
+        $('div.message_container').text("");
+        $('div.message_container').css('display', "none");
         function build_teacher_view (response) {
 
             var teachers = response.teachers.map(element => element.id);
 
             if (teachers.length == 0) {
-                
+                $('div.message_container').text("Nincs találat a megadott feltételekkel.");
+                $('div.message_container').css('display', "block");
             }
 
             $(".teacher-card-a").filter(function( index ) {

@@ -48,6 +48,7 @@
 	</div>
 		
 	<div class="teacher-list">
+		<div class="message_container"></div>
 		@foreach ($teachers as $teacher)
 		<a href="{{route('teacherPage', $teacher->id)}}" class="teacher-card-a" id="{{ $teacher->id }}" title="Részletekért kattints a névjegykártyára!">
 			<div class="teacher-card">
