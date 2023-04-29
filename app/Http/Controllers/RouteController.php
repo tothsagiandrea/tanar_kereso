@@ -25,20 +25,6 @@ class RouteController extends Controller
         $subjects = Subject::all();
         $grades = Grade::all();
         $towns = Town::orderBy('town')->get();
-
-        /* $query = DB::table('teachers')
-                                ->join('grade_subject_teacher', 'teachers.id', '=', 'grade_subject_teacher.teacher_id')
-                                ->join('grade_subject', 'grade_subject_teacher.grade_subject_id', '=', 'grade_subject.id')
-                                ->join('grades', 'grade_subject.grade_id', '=', 'grades.id')
-                                ->join('subjects', 'grade_subject.subject_id', '=', 'subjects.id')
-                                ->join('lesson_type_teacher', 'teachers.id', '=', 'lesson_type_teacher.teacher_id')
-                                ->join('lesson_types', 'lesson_type_teacher.lesson_type_id', '=', 'lesson_types.id')
-                                ->join('users', 'teachers.user_id', '=', 'users.id')
-                                ->select('teachers.*', 'grades.grade', 'subjects.subject', 'lesson_types.lesson_type', 'users.email', 'users.name')
-                                ->groupBy('teachers.id', 'subjects.subject', 'lesson_types.lesson_type')
-                                ->get();
-
-        $teachers = $query->groupBy('id'); */
         $teachers = Teacher::with(['grade_subjects.grade', 'grade_subjects.subject', 'user', 'towns.county', 'lesson_types'])->get();
         return view('index', compact('teachers', 'subjects', 'grades', 'towns'));
     }
