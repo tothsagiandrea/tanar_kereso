@@ -37,7 +37,7 @@
     gap: 0.3em;
 }
 
-.filter-container label {
+.filter-container label, div.form-check-label {
     text-transform: uppercase;
     font-size: 10pt;
 }
@@ -66,7 +66,7 @@ option[value=""][disabled] {
     gap: 2em;
 }
 
-.teacher-list a {
+.teacher-card-a {
     color: unset;
     text-decoration: none;
     cursor: default;
@@ -87,7 +87,8 @@ option[value=""][disabled] {
 .top-strip {
     display: block;
     width: 450px;
-    height: 170px;
+    height: 185px;
+    margin: 0;
     background: linear-gradient(#429bf5, #8bc3fc);
     box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
     color: white;
@@ -143,6 +144,7 @@ option[value=""][disabled] {
 
 .teacher-card .details {
     display: flex;
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
@@ -167,6 +169,10 @@ option[value=""][disabled] {
     flex-direction: row;
     align-items: flex-start;
     gap: 0.6em;
+}
+
+.teacher-card button {
+    margin-bottom: 1.2em;
 }
 
 
@@ -273,12 +279,16 @@ ul.subject-grades {
         padding: 0.3em;
     }
     .teacher-list {
-        gap: 0;
+        gap: 0.5;
+    }
+
+    .teacher-card-a {
+        width: 96vw;
+        margin: 0.5em auto;
     }
 
     .teacher-card {
         width: 96vw;
-        margin: 0.5em auto;
     }
 
     .top-strip {
@@ -307,7 +317,7 @@ ul.subject-grades {
         gap: 0;
     }
 
-    .teacher-card {
+    .teacher-card-a {
         margin: 0.8em auto;
     }
 }

@@ -41,4 +41,62 @@ $( document ).ready(function(){
         }
         return validated;
     });
+
+    $('button.btn-filter').on('click', function() {
+
+        function build_teacher_view (response) {
+
+            var teachers = response.teachers.map(element => element.id);
+
+            if (teachers.length == 0) {
+                
+            }
+
+            $(".teacher-card-a").filter(function( index ) {
+                return !teachers.includes(parseInt($( this ).attr( "id" ), 10));
+              }).css("display", "none");
+
+              $(".teacher-card-a").filter(function( index ) {
+                return teachers.includes(parseInt($( this ).attr( "id" ), 10));
+              }).css("display", "block");
+
+        }
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        var data = {
+        };
+
+        if($('#subject').val().length > 0){
+            data['subject'] = $('#subject').val();
+        }
+
+        if($('#grades').val().length > 0){
+            data['grade'] =$('#grades').val();
+        }
+
+        if($('#lesson_type').val().length > 0){
+            data['lesson_type'] = $('#lesson_type').val();
+        }
+
+        if($('#towns').val().length > 0){
+            data['town'] = $('#towns').val();
+        }
+
+        if(!jQuery.isEmptyObject(data)){
+            $.ajax({
+                type: "POST",
+                url: "/filterteacher",
+                data: data,
+                dataType: "json",
+                success: function (response) {
+                    build_teacher_view(response)
+                }
+            });
+        }
+    });
 });

@@ -9,6 +9,7 @@ use App\Http\Requests\TeacherRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Filament\Tables\Columns\Layout\Split;
+use Illuminate\Database\Eloquent\Builder;
 
 use App\Models\Qualification;
 use App\Models\LessonType;
@@ -31,6 +32,42 @@ class TeacherController extends Controller
         $counties = County::all();
 
         return ['qualifications' => $qualifications, 'lesson_types' => $lesson_types, 'grades' => $grades, 'counties' => $counties];
+    }
+
+    public function showFilteredTeacherPage(Request $request) {
+        $query = Teacher::query()->with(['grade_subjects', 'user', 'towns', 'lesson_types']);
+/* 
+        $query->when($request->subject, function (Builder $query, string $subject) {
+            $query->whereRelation('grade_subjects', 'subject_id', '=', intval($subject));
+        });
+
+        $query->when($request->grade, function (Builder $query, string $grade) {
+            $query->whereRelation('grade_subjects', 'grade_id', '=', intval($grade));
+        });
+
+        $query->when($request->town, function (Builder $query, string $town) {
+            $query->whereRelation('towns', 'town_id', '=', intval($town));
+        }); */
+        if ($request->has('subject')) {
+            $query->whereRelationIn('grade_subjects', 'subject_id', $request->subject);
+        }
+
+        if ($request->has('grade')) {
+            $query->whereRelationIn('grade_subjects', 'grade_id', $request->grade);
+        }
+
+        if ($request->has('town')) {
+            $query->whereRelationIn('towns', 'town_id', $request->town);
+        }
+
+        if ($request->has('lesson_type')) {
+            $query->whereRelationIn('lesson_types', 'lesson_type_id', $request->lesson_type);
+        }
+
+        $teachers = $query->select('id')->get();
+        return response()->json([
+            'teachers' => $teachers
+        ]);
     }
 
     private function getSubjectGrades($data) {

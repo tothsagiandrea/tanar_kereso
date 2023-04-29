@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('csrf')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
+
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/teachers.css')}}">
 @endsection
@@ -10,8 +14,7 @@
 	<div class="filter-container">
 		<div class="filter-elements">
 			<label for="subject">Tantárgyak</label>
-			<select id="subject" name="subject">
-				<option selected value="" disabled>Válasszon tantárgyat!</option>
+			<select multiple id="subject" name="subject">
 				@foreach ($subjects as $subject)
 				<option value={{$subject->id}}>{{$subject->subject}}</option>
 				@endforeach
@@ -19,24 +22,23 @@
 		</div>
 		<div class="filter-elements">
 			<label for="grades">Tanulási szint</label>
-			<select id="grades" name="grades">
-				<option selected value="" disabled>Válasszon tanulási szintet!</option>
+			<select multiple id="grades" name="grades">
 				@foreach ($grades as $grade)
 				<option value={{$grade->id}}>{{$grade->grade}}</option>
 				@endforeach
 			</select>
 		</div>
 		<div class="filter-elements">
-			<label class="form-check-label" for="exampleRadios1">Oktatás módja</label>
-			<div class="form-check">
-				<label class="form-check-label" for="exampleRadios1">Online oktatás</label>
-				<input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Online oktatás">
-			</div>
+			<label for="lesson_type">Oktatás módja</label>
+			<select multiple id="lesson_type" name="lesson_type">
+				@foreach ($lesson_types as $lesson_type)
+				<option value={{$lesson_type->id}}>{{$lesson_type->lesson_type}}</option>
+				@endforeach
+			</select>
 		</div>
 		<div class="filter-elements">
 			<label for="towns">Helyszín</label>
-			<select id="towns" name="towns">
-				<option selected value="" disabled>Válasszon helyszínt!</option>
+			<select multiple id="towns" name="towns">
 				@foreach ($towns as $town)
 				<option value={{$town->id}}>{{$town->town}}</option>
 				@endforeach
@@ -47,7 +49,7 @@
 		
 	<div class="teacher-list">
 		@foreach ($teachers as $teacher)
-		<a href="#" title="Részletekért kattints a névjegykártyára.">
+		<a href="{{route('teacherPage', $teacher->id)}}" class="teacher-card-a" id="{{ $teacher->id }}" title="Részletekért kattints a névjegykártyára!">
 			<div class="teacher-card">
 				<div class="top-strip">
 					<h2>{{ $teacher->user->name }}</h2>
@@ -73,10 +75,14 @@
 						{!! $teacher->lesson_types->implode('lesson_type', '<br>') !!}
 					</div>
 				</div>
-				<a href="{{route('teacherPage', $teacher->id)}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
+				<button onClick="{{route('teacherPage', $teacher->id)}}" class="bn632-hover bn22">Tanár saját oldala</button>
 			</div>
 		</a>
 		@endforeach
 	</div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{asset('js/teacherdata.js')}}"></script>
 @endsection

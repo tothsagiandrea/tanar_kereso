@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        @yield('csrf')
         <title>Tanárkereső</title>
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}">
@@ -10,8 +11,6 @@
         @yield('styles')
         <link rel="icon" href="{{asset('img/graduation_cap.svg')}}" type="image/svg+xml">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -73,6 +72,8 @@
             <a href="{{route('aszfPage')}}">ÁSZF</a>
             <a href="{{route('contactsPage')}}">Kapcsolat</a>
         </footer>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
         @yield('scripts')
     </body>
     @yield('ckeditor')

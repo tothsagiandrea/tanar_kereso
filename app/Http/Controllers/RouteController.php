@@ -11,6 +11,7 @@ use App\Http\Controllers\TeacherController;
 use App\Models\Grade;
 use App\Models\GradeSubject;
 use App\Models\GradeSubjectTeacher;
+use App\Models\LessonType;
 use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\Town;
@@ -25,8 +26,9 @@ class RouteController extends Controller
         $subjects = Subject::all();
         $grades = Grade::all();
         $towns = Town::orderBy('town')->get();
+        $lesson_types = LessonType::all();
         $teachers = Teacher::with(['grade_subjects.grade', 'grade_subjects.subject', 'user', 'towns.county', 'lesson_types'])->get();
-        return view('index', compact('teachers', 'subjects', 'grades', 'towns'));
+        return view('index', compact('teachers', 'subjects', 'grades', 'towns', 'lesson_types'));
     }
 
     public function showContacts () : View {
@@ -43,6 +45,14 @@ class RouteController extends Controller
 
     public function showTeacherDataPage () : View {
         $user = auth()->user();
+        if ($user->user_group->name != 'tanár') {
+            if ($_SERVER['HTTP_REFERER']) {
+                Redirect::back();
+            } else {
+                Redirect::to('/');
+                return view('/');
+            }
+        }
         $data = (new TeacherController)->getTeacherData();
         $qualifications = $data['qualifications'];
         $lesson_types = $data['lesson_types'];
