@@ -76,9 +76,20 @@
 						<img src="{{ url("storage/profile_pics/$path") }}" alt="">
 					</div>
 					<div class="details">
-						<p>Óradíj</p>
-						<img src="{{ asset('img/banking.png')}}" class="iconbanking" alt="icon">
-						<p>{{ $teacher->first()->hourly_rate }} Ft/óra</p>
+						<div class="payments">
+							<span class="material-icons">
+								payments
+							</span>
+							<p>{{ $teacher->first()->hourly_rate }} Ft/óra</p>
+						</div>
+						<div class="locations">
+							<span class="material-icons">
+								location_on
+							</span>
+							<ul>
+							{{ dd($teacher) }}
+							</ul>
+						</div>
 					</div>
 					<a href="{{route('teacherPage', $teacher->first()->id)}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
 				</div>

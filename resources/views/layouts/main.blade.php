@@ -16,7 +16,7 @@
 
     <body>
         <header>
-            <img src="img\fejlec.png" class="header-fejlec" style="width: 100%" alt="fejlec">
+            <img src="{{ url('img\fejlec.png') }}" class="header-fejlec" style="width: 100%" alt="fejlec">
         </header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -66,7 +66,7 @@
         </main>
 
         <footer class="footer-container">
-            <img src="img/tklogo fekete.png" alt="logo" id="logolablec">
+            <img src="{{ url('img/tklogo fekete.png') }}" alt="logo" id="logolablec">
             <a href="{{route('gdprPage')}}">Adatvédelmi szabályzat</a>
             <a href="{{route('aszfPage')}}">ÁSZF</a>
             <a href="{{route('contactsPage')}}">Kapcsolat</a>

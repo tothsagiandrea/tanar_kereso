@@ -31,8 +31,10 @@ class RouteController extends Controller
                                 ->join('grade_subject', 'grade_subject_teacher.grade_subject_id', '=', 'grade_subject.id')
                                 ->join('grades', 'grade_subject.grade_id', '=', 'grades.id')
                                 ->join('subjects', 'grade_subject.subject_id', '=', 'subjects.id')
+                                ->join('lesson_type_teacher', 'teachers.id', '=', 'lesson_type_teacher.teacher_id')
+                                ->join('lesson_types', 'lesson_type_teacher.lesson_type_id', '=', 'lesson_types.id')
                                 ->join('users', 'teachers.user_id', '=', 'users.id')
-                                ->select('teachers.*', 'grades.grade', 'subjects.subject', 'users.email', 'users.name')
+                                ->select('teachers.*', 'grades.grade', 'subjects.subject', 'lesson_types.lesson_type', 'users.email', 'users.name')
                                 ->groupBy('teachers.id', 'subjects.subject')
                                 ->get();
         
