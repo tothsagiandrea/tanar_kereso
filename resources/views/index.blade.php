@@ -66,12 +66,12 @@
             <a href="#" title="Részletekért kattints a névjegykártyára.">
 				<div class="teacher-card">
 					<div class="top-strip">
-						<h2>{{ $teacher->first()->name }}</h2>
-						{{ $teacher->implode('subject', ', ') }}
+						<h2>{{ $teacher->user->name }}</h2>
+						{{ $teacher->grade_subjects->unique('subject')->implode('subject.subject', ', ') }}
 					</div>
 					<div class="avatar">
 						@php
-							$path = $teacher->first()->profile_pic_path
+							$path = $teacher->profile_pic_path
 						@endphp 
 						<img src="{{ url("storage/profile_pics/$path") }}" alt="">
 					</div>
@@ -80,16 +80,16 @@
 							<span class="material-icons">
 								payments
 							</span>
-							<p>{{ $teacher->first()->hourly_rate }} Ft/óra</p>
+							<p>{{ $teacher->hourly_rate }} Ft/óra</p>
 						</div>
 						<div class="locations">
 							<span class="material-icons">
 								location_on
 							</span>
-							{!! $teacher->implode('lesson_type', '<br>') !!}
+							{!! $teacher->lesson_types->implode('lesson_type', '<br>') !!}
 						</div>
 					</div>
-					<a href="{{route('teacherPage', $teacher->first()->id)}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
+					<a href="{{route('teacherPage', $teacher->id)}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
 				</div>
 			</a>
             @endforeach

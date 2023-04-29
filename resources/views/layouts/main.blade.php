@@ -25,7 +25,7 @@
                 </button>
                 <div class="collapse navbar-collapse navbar-dark my-3" id="navbarNavAltMarkup">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="{{route('indexPage')}}">Tanárkereső</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('indexPage')}}">Tanárok</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('servicesPage')}}">Információk</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('contactsPage')}}">Kapcsolat</a></li>
                         {{-- <li class="nav-item"><a class="nav-link" href="{{route('forumPage')}}">Fórum</a></li> --}}
@@ -35,10 +35,10 @@
                         @endguest
                     </ul>
 
-                    <form class="d-flex">
+                    {{-- <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Keresés..." aria-label="Keresés">
                         <button class="btn btn-outline-light" type="submit">Keresés</button>
-                    </form>
+                    </form> --}}
 
                     @auth
                     <div class="dropdown">
