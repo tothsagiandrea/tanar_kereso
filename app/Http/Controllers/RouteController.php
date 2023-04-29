@@ -35,27 +35,9 @@ class RouteController extends Controller
                                 ->join('lesson_types', 'lesson_type_teacher.lesson_type_id', '=', 'lesson_types.id')
                                 ->join('users', 'teachers.user_id', '=', 'users.id')
                                 ->select('teachers.*', 'grades.grade', 'subjects.subject', 'lesson_types.lesson_type', 'users.email', 'users.name')
-                                ->groupBy('teachers.id', 'subjects.subject')
+                                ->groupBy('teachers.id', 'subjects.subject', 'lesson_types.lesson_type')
                                 ->get();
-        
 
-        /*$query = DB::table('teachers')
-                            ->select('teachers.*', 'grades.grade', 'subjects.subject', 'users.email', 'users.name')
-                            ->join(DB::table('grade_subject_teacher')
-                            ->join('grade_subject', 'grade_subject_teacher.grade_subject_id', '=', 'grade_subject.id')
-                            ->join('grades', 'grade_subject.grade_id', '=', 'grades.id')
-                            ->join('subjects', 'grade_subject.subject_id', '=', 'subjects.id')
-                            ->join('users', 'teachers.user_id', '=', 'users.id')
-                            ->groupBy('subjects.subject'), function($join) {
-                                $join->on('teachers.id', '=', 'grade_subject_teacher.teacher_id');
-                            })
-                            ->groupBy('teachers.id')
-                            ->get();*/
-
-        /*$query = DB::raw(
-            "SELECT * FROM Teachers
-            INNER JOIN grade_subject_teacher"
-        )->get;*/
         $teachers = $query->groupBy('id');
         return view('index', compact('teachers', 'subjects', 'grades', 'towns'));
     }

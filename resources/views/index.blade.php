@@ -86,9 +86,7 @@
 							<span class="material-icons">
 								location_on
 							</span>
-							<ul>
-							{{ dd($teacher) }}
-							</ul>
+							{!! $teacher->implode('lesson_type', '<br>') !!}
 						</div>
 					</div>
 					<a href="{{route('teacherPage', $teacher->first()->id)}}"><button class="bn632-hover bn22">Tanár saját oldala</button></a>
