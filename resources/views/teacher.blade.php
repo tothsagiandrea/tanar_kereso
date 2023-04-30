@@ -24,7 +24,14 @@
 						<span class="material-icons">
 							email
 						</span>
-						<p>{{ $teacher->user->email }}</p>
+                        <p>
+                        @auth
+                        {{ $teacher->user->email }}
+                        @endauth
+                        @guest
+                            Az email cím megtekintéséhez be kell jelentkezni.
+                        @endguest
+						</p>
 					</div>
 					<div class="teacher-contacts location">
 						<span class="material-icons">
@@ -59,13 +66,13 @@
 					<div class="teacher-subjects">
 						<h5>Tanított tantárgyak</h5>
 						<div>
-							@foreach($teacher->grade_subjects->unique('subject') as $subject) 
+							@foreach($teacher->grade_subjects->unique('subject') as $subject)
 							<div class="teached-subject">{{ $subject->subject->subject }}</div>
 							<ul class="subject-grades">
 							@foreach($teacher->grade_subjects as $grade_subject)
 								@if($grade_subject->subject == $subject->subject)
 								<li>{{ $grade_subject->grade->grade }}</li>
-								@endif                    
+								@endif
 							@endforeach
 							</ul>
 							@endforeach

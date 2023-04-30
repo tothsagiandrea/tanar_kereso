@@ -1,10 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\ContactRequest;
+use App\Mail\ContactEmail;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Psy\Readline\Hoa\Console;
+use Illuminate\Support\Facades\Mail;
 
 use App\Http\Controllers\TeacherController;
 
@@ -79,5 +83,13 @@ class RouteController extends Controller
 
     public function showGdpr () : View {
         return view('gdpr');
+    }
+
+    public function sendEmail (ContactRequest $request) : View{
+        $email = $request->email;
+        $name = $request->name;
+        $message = $request->message;
+        Mail::to(env('MAIL_FROM_ADDRESS', 'info.tanarkereso@gmail.com'))->send(new ContactEmail($email, $name, $message));
+        return view('emailsent');
     }
 }

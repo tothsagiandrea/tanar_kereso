@@ -105,6 +105,16 @@
     margin: 0.3em auto;
     padding: 0.35em 0.8em;
     border-radius: 50px;
+    border-color: black;
+}
+
+.login-form textarea {
+    width: 80%;
+    display: block;
+    margin: 0.3em auto;
+    padding: 0.35em 0.8em;
+    border-radius: 20px;
+    border-color: black;
 }
 
 .login-form label {
