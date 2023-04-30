@@ -42,18 +42,32 @@ $( document ).ready(function(){
         return validated;
     });
 
+    $.fn.resetFilter = function(){
+        $('.filter-container').css('overflow', 'hidden');
+        $('.filter-container').css('height', '55px');
+        $('.filter-close').css('display', 'none');
+        $('.filter-icon').css('display', 'flex');
+        $('#subject').val([]);
+        $('#grades').val([]);
+        $('#lesson_type').val([]);
+        $('#towns').val([]);
+    }
+
     $('.filter-icon').on('click', function() {
+        if ($( window ).width() <= 569) {
+            $('.filter-close').css('display', 'flex');
+        }
         $('.filter-container').css('overflow', 'unset');
         $('.filter-container').css('height', 'auto');
         $( this ).css('display', 'none');
-        $('.filter-close').css('display', 'flex');
     });
 
     $('.filter-close').on('click', function() {
-        $('.filter-container').css('overflow', 'hidden');
-        $('.filter-container').css('height', '55px');
-        $( this ).css('display', 'none');
-        $('.filter-icon').css('display', 'flex');
+        $.fn.resetFilter();
+    });
+
+    $('button.btn-cancel').on('click', function() {
+        $.fn.resetFilter();
     });
 
     $('button.btn-filter').on('click', function() {
@@ -61,6 +75,13 @@ $( document ).ready(function(){
         $('div.message_container').text("");
         $('div.message_container').css('display', "none");
         function build_teacher_view (response) {
+            
+            $.fn.resetFilter();
+            
+            $('.filter-container').css('overflow', 'hidden');
+            $('.filter-container').css('height', '55px');
+            $( this ).css('display', 'none');
+            $('.filter-icon').css('display', 'flex');
 
             var teachers = response.teachers.map(element => element.id);
 

@@ -25,39 +25,44 @@
 					expand_less
 				</span>
 			</div>
-			<div class="filter-elements">
-				<label for="subject">Tantárgyak</label>
-				<select multiple id="subject" name="subject">
-					@foreach ($subjects as $subject)
-					<option value={{$subject->id}}>{{$subject->subject}}</option>
-					@endforeach
-				</select>
+			<div class="filter-elements-container">
+				<div class="filter-elements">
+					<label for="subject">Tantárgyak</label>
+					<select multiple id="subject" name="subject">
+						@foreach ($subjects as $subject)
+						<option value={{$subject->id}}>{{$subject->subject}}</option>
+						@endforeach
+					</select>
+				</div>
+				<div class="filter-elements">
+					<label for="grades">Tanulási szint</label>
+					<select multiple id="grades" name="grades">
+						@foreach ($grades as $grade)
+						<option value={{$grade->id}}>{{$grade->grade}}</option>
+						@endforeach
+					</select>
+				</div>
+				<div class="filter-elements">
+					<label for="lesson_type">Oktatás módja</label>
+					<select multiple id="lesson_type" name="lesson_type">
+						@foreach ($lesson_types as $lesson_type)
+						<option value={{$lesson_type->id}}>{{$lesson_type->lesson_type}}</option>
+						@endforeach
+					</select>
+				</div>
+				<div class="filter-elements">
+					<label for="towns">Helyszín</label>
+					<select multiple id="towns" name="towns">
+						@foreach ($towns as $town)
+						<option value={{$town->id}}>{{$town->town}}</option>
+						@endforeach
+					</select>
+				</div>
+				<div class="button-group">
+					<button type="button" class="btn btn-danger btn-cancel">Mégse</button>
+					<button type="button" class="btn btn-danger btn-filter">Szűrés</button>
+				</div>
 			</div>
-			<div class="filter-elements">
-				<label for="grades">Tanulási szint</label>
-				<select multiple id="grades" name="grades">
-					@foreach ($grades as $grade)
-					<option value={{$grade->id}}>{{$grade->grade}}</option>
-					@endforeach
-				</select>
-			</div>
-			<div class="filter-elements">
-				<label for="lesson_type">Oktatás módja</label>
-				<select multiple id="lesson_type" name="lesson_type">
-					@foreach ($lesson_types as $lesson_type)
-					<option value={{$lesson_type->id}}>{{$lesson_type->lesson_type}}</option>
-					@endforeach
-				</select>
-			</div>
-			<div class="filter-elements">
-				<label for="towns">Helyszín</label>
-				<select multiple id="towns" name="towns">
-					@foreach ($towns as $town)
-					<option value={{$town->id}}>{{$town->town}}</option>
-					@endforeach
-				</select>
-			</div>
-			<button type="button" class="btn btn-danger btn-filter">Szűrés</button>
 		</div>
 	</div>
 		
