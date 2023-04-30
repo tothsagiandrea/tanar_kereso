@@ -68,7 +68,7 @@
 
         <footer class="footer-container">
             <img src="{{ url('img/tklogo fekete.png') }}" alt="logo" id="logolablec">
-            <a href="{{route('gdprPage')}}">Adatvédelmi szabályzat</a>
+            <a href="{{route('gdprPage')}}">Adatvédelmi&nbsp;szabályzat</a>
             <a href="{{route('aszfPage')}}">ÁSZF</a>
             <a href="{{route('contactsPage')}}">Kapcsolat</a>
         </footer>
