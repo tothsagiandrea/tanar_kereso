@@ -23,7 +23,7 @@
 	@endif
 	<div class="form_messages"></div>
 	{{ dd($teacher->lesson_types) }}
-	{{ $teacher->lesson_types->map(function (App\Models\LessonType $item, $key) {return $item['id'];})->all(); }}
+	{{ $teacher->lesson_types->map(function (App\Models\LessonType $item, $key) {return $item['id'];})->all() }}
 	{{ dd(array_map(fn($assoc) => $assoc['id'], $teacher->lesson_types)) }}
 	<form id="teacher_data_form" method="post" action="{{ route('setTeacherData') }}" enctype="multipart/form-data">
 		@csrf

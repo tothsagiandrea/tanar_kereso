@@ -7,14 +7,14 @@
 <div class="container kapcsolat">
     <div class="login-main-container">
 		<div class="input-container">
-			<form method="post" action="{{route('loginUser')}}" class="login-form">
+			<form method="post" action="{{route('sendEmail')}}" class="login-form">
 				@csrf
 				<div class="form-title">Kapcsolat
 				</div>
 				<div class="container adat">
 					<input type="name" placeholder="Név" name="name">
 					<input type="email" placeholder="E-mail cím" name="email">
-					<input type="text" placeholder="Üzenet" name="message">
+                    <textarea class="form-control" id="message" name="message" required placeholder="Üzenet"></textarea>
 					<div class="row">
 						<input type="checkbox" name="imnotrobot" id="imnotrobot">
 						<label for="imnotrobot">Nem vagyok robot!</label>
@@ -40,14 +40,14 @@
 				<span class="material-icons">
 					email
 				</span><br>
-				<p>gipszjakab@gmail.com</p>
+				<p>info.tanarkereso@gmail.com</p>
 				<span class="material-icons">
 					location_on
 				</span>
-				<p>1171, Budapest Borsfa utca 19.</p>
+				<p>6710, Szeged-Tápé</p>
 				<div class="col">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.4256549890797!2d19.271981415626207!3d47.48162067917665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c6b53acafec3%3A0x701b84342b06ae32!2sBudapest%2C%20Borsfa%20u.%2019%2C%201171!5e0!3m2!1shu!2shu!4v1681732895825!5m2!1shu!2shu" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="g-maps"></iframe>
-				</div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2758.2972039229653!2d20.20678645637151!3d46.26419760542263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDbCsDE1JzUxLjEiTiAyMMKwMTInNDIuMCJF!5e0!3m2!1shu!2shu!4v1682860614215!5m2!1shu!2shu" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="g-maps"></iframe>
+                </div>
 			</div>
 
 		</div>

@@ -23,6 +23,7 @@ Route::get('/forum', [RouteController::class, 'showForum'])->name('forumPage');
 Route::get('/teacher/{id}', [RouteController::class, 'showTeacherPage'])->name('teacherPage');
 Route::get('/aszf', [RouteController::class, 'showAszf'])->name('aszfPage');
 Route::get('/gdpr', [RouteController::class, 'showGdpr'])->name('gdprPage');
+Route::post('/sendemail', [RouteController::class, 'sendEmail'])->name('sendEmail');
 Route::post('/filterteacher', [TeacherController::class, 'showFilteredTeacherPage'])->name('filteredTeacherPage');
 
 Route::post('/login', [UserAuthController::class, 'loginUser'])->name('loginUser');
