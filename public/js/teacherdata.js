@@ -42,6 +42,20 @@ $( document ).ready(function(){
         return validated;
     });
 
+    $('.filter-icon').on('click', function() {
+        $('.filter-container').css('overflow', 'unset');
+        $('.filter-container').css('height', 'auto');
+        $( this ).css('display', 'none');
+        $('.filter-close').css('display', 'flex');
+    });
+
+    $('.filter-close').on('click', function() {
+        $('.filter-container').css('overflow', 'hidden');
+        $('.filter-container').css('height', '55px');
+        $( this ).css('display', 'none');
+        $('.filter-icon').css('display', 'flex');
+    });
+
     $('button.btn-filter').on('click', function() {
 
         $('div.message_container').text("");

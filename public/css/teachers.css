@@ -9,6 +9,10 @@
 /* *** FILTERING TEACHERS *** */
 
 .filter-container {
+    width: 100%;
+}
+
+.filter-inner-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -22,6 +26,10 @@
     justify-content: center;
     border: 1px solid;
     border-color: #080808c9;
+}
+
+.filter-icon, .filter-close {
+    display: none;
 }
 
 .filter-container h3 {
@@ -42,7 +50,7 @@
     font-size: 10pt;
 }
 
-.filter-container select {
+.filter-elements select {
     width: 250px;
     padding: 0.3em;
 }
@@ -274,6 +282,10 @@ ul.subject-grades {
     margin-bottom: 0.6em;
 }
 
+.teacher-video {
+    margin: 0.6em 0 1.2em 0;
+}
+
 .teacher-cv {
     margin: 1.2em 0 0 0;
     padding: 0;
@@ -284,11 +296,13 @@ ul.subject-grades {
 }
 
 @media screen and (max-width: 450px) {
-    .filter-container select {
-        width: 80%;
-        margin: 0 10%;
+
+    .filter-elements select {
+        width: 250px;
+        margin: 0 auto;
         padding: 0.3em;
     }
+
     .teacher-list {
         gap: 0.5;
     }
@@ -308,10 +322,39 @@ ul.subject-grades {
 }
 
 @media screen and (max-width: 550px) {
-    .filter-container select {
-        width: 80%;
-        margin: 0 10%;
+    .filter-elements select {
+        width: 250px;
+        margin: 0 auto;
         padding: 0.3em;
+    }
+}
+
+@media screen and (max-width: 569px) {
+    .filter-icon {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1em;
+        text-transform: uppercase;
+        font-weight: 700;
+        width: 100%;
+        padding: 0.3em 0.6em;
+        padding-left: 0;
+    }
+
+    .filter-close {
+        display: none;
+        justify-content: flex-end;
+        gap: 1em;
+        text-transform: uppercase;
+        font-weight: 700;
+        width: 100%;
+        padding: 0.3em 0.6em;
+        padding-left: 0;
+    }
+
+    .filter-container {
+        height: 55px;
+        overflow: hidden;
     }
 }
 

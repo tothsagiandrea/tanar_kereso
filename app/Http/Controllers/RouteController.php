@@ -54,13 +54,14 @@ class RouteController extends Controller
             }
         }
         $data = (new TeacherController)->getTeacherData();
+        $teacher = $data['teacher'];
         $qualifications = $data['qualifications'];
         $lesson_types = $data['lesson_types'];
         $grades = $data['grades'];
         $counties = $data['counties'];
 
         Redirect::to('/teacherdata');
-        return view('teacherdata', compact('user', 'qualifications', 'lesson_types', 'grades', 'counties'));
+        return view('teacherdata', compact('user', 'teacher', 'qualifications', 'lesson_types', 'grades', 'counties'));
     }
 
     public function setTeacherData(Request $request) {

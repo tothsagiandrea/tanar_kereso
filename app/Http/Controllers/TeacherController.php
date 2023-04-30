@@ -31,7 +31,12 @@ class TeacherController extends Controller
         $grades = Grade::all();
         $counties = County::all();
 
-        return ['qualifications' => $qualifications, 'lesson_types' => $lesson_types, 'grades' => $grades, 'counties' => $counties];
+        $user = auth()->user();
+        $teacher = $user->teacher->id;
+
+        $query = Teacher::with(['grade_subjects.grade', 'grade_subjects.subject', 'user', 'towns.county', 'lesson_types'])->find($teacher);
+
+        return ['teacher' => $query, 'qualifications' => $qualifications, 'lesson_types' => $lesson_types, 'grades' => $grades, 'counties' => $counties];
     }
 
     public function showFilteredTeacherPage(Request $request) {
