@@ -12,9 +12,16 @@
 				<div class="form-title">Kapcsolat
 				</div>
 				<div class="container adat">
-					<input type="name" placeholder="Név" name="name">
-					<input type="email" placeholder="E-mail cím" name="email">
-                    <textarea class="form-control" id="message" name="message" required placeholder="Üzenet"></textarea>
+					<div class="messages">
+						@if ($errors->any())
+							Hiba történt a regisztráció közben!
+						@else
+							Minden mező kitöltése kötelező!
+						@endif
+					</div>
+					<input type="name" placeholder="Név" name="name" required>
+					<input type="email" placeholder="E-mail cím" name="email" required>
+                    <textarea required class="form-control" id="message" name="message" placeholder="Üzenet"></textarea>
 					<div class="row">
 						<input type="checkbox" name="imnotrobot" id="imnotrobot">
 						<label for="imnotrobot">Nem vagyok robot!</label>
