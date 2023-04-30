@@ -282,6 +282,10 @@ ul.subject-grades {
     margin-bottom: 0.6em;
 }
 
+.teacher-video {
+    margin: 0.6em 0 1.2em 0;
+}
+
 .teacher-cv {
     margin: 1.2em 0 0 0;
     padding: 0;
