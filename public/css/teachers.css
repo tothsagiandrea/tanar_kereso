@@ -1,0 +1,345 @@
+.teacher-container {
+    max-width: 100%;
+    margin: 1em auto;
+    margin-top: 0;
+    justify-content: center;
+
+}
+
+/* *** FILTERING TEACHERS *** */
+
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3em;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.8em;
+    background: url("../img/kereso.png");
+    color: rgb(253, 251, 251);
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    border-color: #080808c9;
+}
+
+.filter-container h3 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 16pt;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.filter-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.filter-container label, div.form-check-label {
+    text-transform: uppercase;
+    font-size: 10pt;
+}
+
+.filter-container select {
+    width: 250px;
+    padding: 0.3em;
+}
+
+.btn-filter {
+    align-items: center;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+/* *** LIST OF TEACHERS *** */
+
+.teacher-list {
+    margin: 1.5em 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+.message_container {
+    display: none;
+    width: 97%;
+    max-width: 600px;
+    background-color: #fff;
+    color: #292b2e;
+    text-align: center;
+    margin: 2em auto;
+    padding: 1em;
+}
+
+.teacher-card-a {
+    color: unset;
+    text-decoration: none;
+    cursor: default;
+    height: 420px;
+}
+
+.teacher-card {
+    width: 450px;
+    height: 420px;
+    background-color: white;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-strip {
+    display: block;
+    width: 450px;
+    height: 185px;
+    margin: 0;
+    background: linear-gradient(#429bf5, #8bc3fc);
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+    padding-top: 1.4em;
+}
+
+.top-strip h2 {
+    font-size: 14pt;
+    background: none;
+    color: white;
+    font-weight: 700;
+    text-shadow: 2px 2px #365778;
+    margin-bottom: 0.5em;
+}
+
+.top-strip h3 {
+    font-size: 12pt;
+    color: white;
+    font-weight: 500;
+    text-shadow: 2px 2px #365778;
+    font-style: italic;
+}
+
+.avatar {
+    background-color: white;
+    padding: 10px;
+    border: solid 5px white;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -0px -8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.teacher-list .avatar {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+}
+
+.avatar img {
+    object-fit: cover;
+}
+
+.teacher-list .avatar img {
+    min-width: 100px;
+    min-height: 100px;
+}
+
+.teacher-card .details {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2.75em;
+    height: 130px;
+}
+
+.details p {
+    margin: 0;
+    padding: 0;
+}
+
+.details .payments {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6em;
+}
+
+.details .locations {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.6em;
+}
+
+.teacher-card button {
+    margin-bottom: 1.2em;
+}
+
+
+/* *** TEACHER PAGE STYLING *** */
+
+.teacher-page {
+    display: flex;
+    flex-direction: column;
+    margin: 1em auto;
+    padding: 0;
+    background-color: #8bc3fc;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.teacher-main-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 0.6em;
+    padding: 0.6em;
+    background-color: white;
+    color: #202c40;
+    gap: 0.6em;
+    min-height: 500px;
+}
+
+.teacher-left-container {
+    flex-grow: 1;
+    margin: 0.6em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    justify-content: start;
+}
+
+.teacher-contacts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.6em;
+    align-items: center;
+    padding: 1em 0;
+    border-bottom: 3px solid #eee;
+}
+
+.teacher-contacts .avatar {
+    width: 200px;
+    height: 200px;
+}
+
+.teacher-contacts .avatar img {
+    min-width: 200px;
+    min-height: 200px;
+}
+
+.teacher-contacts.location {
+    align-items: flex-start;
+}
+
+.teacher-contacts p {
+    margin: 0;
+    padding: 0;
+}
+
+.teacher-right-container {
+    flex-grow: 3;
+    padding: 1.2em;
+    border-left: 3px solid #eee;
+}
+
+.teacher-right-container h5 {
+    margin: 0 auto;
+    text-align: left;
+}
+
+.teacher-subjects {
+    margin: 0 0 1.2em 0;
+    border-bottom: 3px solid #eee;
+}
+
+.teacher-subjects > div {
+    margin-top: 1.2em;
+}
+
+ul.subject-grades {
+    margin-bottom: 0.6em;
+}
+
+.teacher-cv {
+    margin: 1.2em 0 0 0;
+    padding: 0;
+}
+
+.button-container {
+    margin: 1.2em auto;
+}
+
+@media screen and (max-width: 450px) {
+    .filter-container select {
+        width: 80%;
+        margin: 0 10%;
+        padding: 0.3em;
+    }
+    .teacher-list {
+        gap: 0.5;
+    }
+
+    .teacher-card-a {
+        width: 96vw;
+        margin: 0.5em auto;
+    }
+
+    .teacher-card {
+        width: 96vw;
+    }
+
+    .top-strip {
+        width: 96vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .filter-container select {
+        width: 80%;
+        margin: 0 10%;
+        padding: 0.3em;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .teacher-container {
+        padding: 0;
+    }
+    
+    .filter-container {
+        gap: 0.6em;
+    }
+
+    .teacher-list {
+        gap: 0;
+    }
+
+    .teacher-card-a {
+        margin: 0.8em auto;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .btn-filter {
+        display: block;
+        margin: 0 40%;
+    }
+    
+    .filter-container {
+        gap: 0.9em;
+    }
+}

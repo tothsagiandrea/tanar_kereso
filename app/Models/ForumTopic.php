@@ -11,6 +11,6 @@ class ForumTopic extends Model
 
     protected $fillable = [
         'title',
-        'user'
+        'user_id'
     ];
 }

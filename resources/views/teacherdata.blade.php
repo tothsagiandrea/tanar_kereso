@@ -7,21 +7,27 @@
 @section('content')
 <h1>Személyes adatok</h1>
 <div class="container-fluid teachdata">
+	<h5>
+		@isset($user)
+			{{$user->name}}
+		@endisset
+		&nbsp;-&nbsp;
+		@isset($user)
+			{{$user->email}}
+		@endisset
+	</h5>
 	@if(session("status") && (session("status") == "missing_data"))
 	<div>
 		Minden mező kitöltendő!
 	</div>
 	@endif
-	<form method="post" action="{{ route('setTeacherData') }}">
+	<div class="form_messages">
+
+	</div>
+	<form id="teacher_data_form" method="post" action="{{ route('setTeacherData') }}" enctype="multipart/form-data">
 		@csrf
 		<div class="row my-2">
-			<div class="col">
-				<label class="py-2" for="fullname">Teljes név</label>
-				<input type="text" id="fullname" name="fullname" class="form-control" placeholder="Név" @isset($user)
-					value="{{$user->name}}"
-				@endisset required>
-			</div>
-			<div class="col">
+			<div class="form-group">
 				<label class="py-2" for="highest_degree">Legmagasabb iskolai végzettség</label>
 				<select class="form-control" id="highest_degree" name="highest_degree" required>
 					@foreach ($qualifications as $qualification)
@@ -32,17 +38,9 @@
 		</div>
 		<div class="row my-2">
 			<div class="form-group">
-				<label class="py-2" for="exampleFormControlInput1">Email address</label>
-				<input type="email" class="form-control" id="email" placeholder="example@example.hu" @isset($user)
-				value="{{$user->email}}"
-			@endisset disabled>
-			</div>
-		</div>
-		<div class="row my-2">
-			<div class="form-group">
 				<label class="py-2" for="lesson_type">Oktatás módja (CTRL lenyomásával többet is választhat)</label>
 				<div class="form_element_container">
-					<select multiple id="lesson_type" class="form-control horizontal_layout" name="lesson_type[]" required>
+					<select multiple id="lesson_type" class="form-control" name="lesson_type[]" required>
 					@foreach ($lesson_types as $lesson_type)
 						<option value="{{ $lesson_type->id }}">{{ $lesson_type->lesson_type }}</option>
 					@endforeach
@@ -50,7 +48,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row my-2">
+		<div class="row my-2 location-row">
 			<div class="form-group">
 				<label class="py-2" for="location">Válassza ki a preferált várost/kerületet (CTRL lenyomásával többet is választhat)</label>
 				<select multiple class="form-control" id="location" name="location[]">
@@ -67,7 +65,7 @@
 		<div class="row my-2">
 			<div class="form-group">
 				<label class="py-2" for="subjects">Mely tantárgyakat szeretné tanítani? (CTRL lenyomásával többet is választhat)</label>
-				<select multiple class="form-control" id="subjects" name="subjects[]">
+				<select multiple class="form-control" id="subjects" name="subjects[]" required>
 					@foreach ($grades as $grade)
 					<optgroup label="{{ $grade->grade }}">
 						@foreach ($grade->subjects as $subject)
@@ -87,7 +85,7 @@
 		<div class="row my-2">
 			<div class="form-group">
 				<label class="py-2" for="cv_text">Szakmai önéletrajz</label>
-				<textarea class="form-control" id="cv_text" name="cv_text" required></textarea>
+				<textarea class="form-control ckeditor" id="cv_text" name="cv_text" required></textarea>
 			</div>
 		</div>
 		<div class="row my-2">
@@ -120,4 +118,17 @@
 	</form>
 
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{asset('js/teacherdata.js')}}"></script>
+@endsection
+
+@section('ckeditor')
+<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+       $('.ckeditor').ckeditor();
+    });
+</script>
 @endsection

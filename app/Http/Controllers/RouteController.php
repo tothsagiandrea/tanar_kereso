@@ -9,6 +9,9 @@ use Psy\Readline\Hoa\Console;
 use App\Http\Controllers\TeacherController;
 
 use App\Models\Grade;
+use App\Models\GradeSubject;
+use App\Models\GradeSubjectTeacher;
+use App\Models\LessonType;
 use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\Town;
@@ -20,11 +23,12 @@ use Illuminate\Support\Facades\Redirect;
 class RouteController extends Controller
 {
     public function showIndex () : View {
-        $teachers = Teacher::get();
-        $subjects = Subject::get();
-        $grades = Grade::get();
-        $towns = DB::table('towns')->orderBy('town')->get();
-        return view('index', compact('teachers', 'subjects', 'grades', 'towns'));
+        $subjects = Subject::all();
+        $grades = Grade::all();
+        $towns = Town::orderBy('town')->get();
+        $lesson_types = LessonType::all();
+        $teachers = Teacher::with(['grade_subjects.grade', 'grade_subjects.subject', 'user', 'towns.county', 'lesson_types'])->get();
+        return view('index', compact('teachers', 'subjects', 'grades', 'towns', 'lesson_types'));
     }
 
     public function showContacts () : View {
@@ -41,6 +45,14 @@ class RouteController extends Controller
 
     public function showTeacherDataPage () : View {
         $user = auth()->user();
+        if ($user->user_group->name != 'tanár') {
+            if ($_SERVER['HTTP_REFERER']) {
+                Redirect::back();
+            } else {
+                Redirect::to('/');
+                return view('/');
+            }
+        }
         $data = (new TeacherController)->getTeacherData();
         $qualifications = $data['qualifications'];
         $lesson_types = $data['lesson_types'];
@@ -56,9 +68,9 @@ class RouteController extends Controller
     }
 
     public function showTeacherPage (Request $request) : View {
-        $teachers = Teacher::get();
-        $teacher = $teachers->find($request->id);
-        return view('teacher', compact('teacher'));
+        $user = auth()->user();
+        $teacher = Teacher::with(['grade_subjects.grade', 'grade_subjects.subject', 'user', 'towns.county'])->find($request->id);
+        return view('teacher', compact('teacher', 'user'));
     }
 
     public function showAszf () : View {

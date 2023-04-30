@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        @yield('csrf')
         <title>Tanárkereső</title>
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}">
@@ -10,12 +11,11 @@
         @yield('styles')
         <link rel="icon" href="{{asset('img/graduation_cap.svg')}}" type="image/svg+xml">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
     </head>
 
     <body>
         <header>
-            <img src="img\fejlec.png" class="header-fejlec" style="width: 100%" alt="fejlec">
+            <img src="{{ url('img\fejlec.png') }}">
         </header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -24,7 +24,7 @@
                 </button>
                 <div class="collapse navbar-collapse navbar-dark my-3" id="navbarNavAltMarkup">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="{{route('indexPage')}}">Tanárkereső</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('indexPage')}}">Tanárok</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('servicesPage')}}">Információk</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('contactsPage')}}">Kapcsolat</a></li>
                         {{-- <li class="nav-item"><a class="nav-link" href="{{route('forumPage')}}">Fórum</a></li> --}}
@@ -34,10 +34,10 @@
                         @endguest
                     </ul>
 
-                    <form class="d-flex">
+                    {{-- <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Keresés..." aria-label="Keresés">
                         <button class="btn btn-outline-light" type="submit">Keresés</button>
-                    </form>
+                    </form> --}}
 
                     @auth
                     <div class="dropdown">
@@ -45,8 +45,14 @@
                             Profilom
                         </button>
                         <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{route('logoutUser')}}">Kilépés</a></li>
-                        <li><a class="dropdown-item" href="{{route('teacherDataPage')}}">Adatok módosítása</a></li>
+                            @if(auth()->user()->user_group->name == "tanár")
+                            <li><a class="dropdown-item" href="{{route('teacherDataPage')}}">Adatok módosítása</a></li>
+                            @endif
+                            <li><a class="dropdown-item" href="{{route('changeUserDataPage')}}">Alapadatok módosítása</a></li>
+                            <hr>
+                            <li><a class="dropdown-item" href="{{route('deleteUserPage')}}">Regisztráció törlése</a></li>
+                            <hr>
+                            <li><a class="dropdown-item" href="{{route('logoutUser')}}">Kilépés</a></li>
                         </ul>
                     </div>
                     @endauth
@@ -61,11 +67,14 @@
         </main>
 
         <footer class="footer-container">
-            <img src="img/tklogo fekete.png" alt="logo" id="logolablec">
+            <img src="{{ url('img/tklogo fekete.png') }}" alt="logo" id="logolablec">
             <a href="{{route('gdprPage')}}">Adatvédelmi szabályzat</a>
             <a href="{{route('aszfPage')}}">ÁSZF</a>
             <a href="{{route('contactsPage')}}">Kapcsolat</a>
         </footer>
-        <script src="{{asset('js/adatbekero.js')}}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
+        @yield('scripts')
     </body>
+    @yield('ckeditor')
 </html>

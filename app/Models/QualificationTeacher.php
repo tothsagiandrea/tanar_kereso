@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ForumPost extends Model
+class QualificationTeacher extends Model
 {
     use HasFactory;
 
+    protected $table = "qualification_teacher";
+
     protected $fillable = [
-        'post',
-        'answer_to',
-        'user_id',
-        'topic_id'
-    ];
+        'teacher_id',
+        'qualification_id'
+    ];    
 }

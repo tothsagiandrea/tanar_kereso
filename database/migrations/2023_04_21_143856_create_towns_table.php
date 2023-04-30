@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('towns', function (Blueprint $table) {
             $table->id();
             $table->string('town', 100);
-            $table->foreignId('county')->references('id')->on('counties')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('county_id')->references('id')->on('counties')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
 
             $table->charset = 'utf8mb4';

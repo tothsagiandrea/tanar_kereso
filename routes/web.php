@@ -23,16 +23,22 @@ Route::get('/forum', [RouteController::class, 'showForum'])->name('forumPage');
 Route::get('/teacher/{id}', [RouteController::class, 'showTeacherPage'])->name('teacherPage');
 Route::get('/aszf', [RouteController::class, 'showAszf'])->name('aszfPage');
 Route::get('/gdpr', [RouteController::class, 'showGdpr'])->name('gdprPage');
+Route::post('/filterteacher', [TeacherController::class, 'showFilteredTeacherPage'])->name('filteredTeacherPage');
 
 Route::post('/login', [UserAuthController::class, 'loginUser'])->name('loginUser');
 Route::post('/register', [UserAuthController::class, 'registerUser'])->name('registerUser');
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/changeuserdata', [UserAuthController::class, 'showChangeUserDataPage'])->name('changeUserDataPage');
+    Route::post('/changeuserdata', [UserAuthController::class, 'changeUserData'])->name('changeUserData');
+    Route::post('/changeuserpassowrd', [UserAuthController::class, 'changeUserPassowrd'])->name('changeUserPassword');
     Route::get('/teacherdata', [RouteController::class, 'showTeacherDataPage'])->name('teacherDataPage');
     Route::post('/teacherdata', [TeacherController::class, 'insertTeacherData'])->name('setTeacherData');
     Route::get('/emailverification', [UserAuthController::class, 'showVerifyEmailPage'])->name('verification.notice');
     Route::get('/verifiedemail', [UserAuthController::class, 'showVerifiedEmailPage'])->name('verifiedEmailPage');
     Route::get('/logout', [UserAuthController::class, 'logoutUser'])->name('logoutUser');
+    Route::get('/deleteuser', [UserAuthController::class, 'showDeleteUserPage'])->name('deleteUserPage');
+    Route::post('/deleteuser', [UserAuthController::class, 'deleteUser'])->name('deleteUser');
 });
 
 Route::middleware(['auth', 'signed'])->group(function () {

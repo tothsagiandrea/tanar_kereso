@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('contact_detail', 400);
             $table->boolean('is_public');
-            $table->foreignId('contact_type')->references('id')->on('contact_types')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('user')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('contact_type_id')->references('id')->on('contact_types')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
 
             $table->charset = 'utf8mb4';
