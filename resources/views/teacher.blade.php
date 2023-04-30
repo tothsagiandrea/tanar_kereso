@@ -78,6 +78,12 @@
 							@endforeach
 						</div>
 					</div>
+					@if ($teacher->profile_video_path != null)
+					<h5>Bemutatkozó videóm</h5>
+					<div class="teacher-video">
+						<a href="{{ $teacher->profile_video_path }}"" target="_blank">Videó megtekintése</a>
+					</div>
+					@endif
 					<h5>Rólam</h5>
 					<div class="teacher-cv">
 						{!! $teacher->curriculum_vitae !!}
