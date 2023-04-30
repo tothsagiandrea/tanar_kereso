@@ -4,8 +4,8 @@
 @endsection
 
 @section('content')
-    <div class="container">
-        <br>
+    <div class="container white-background pt-2">
+
         <h1>Felhasználói feltételek</h1>
 
         <h3>Elfogadható használat</h3>
