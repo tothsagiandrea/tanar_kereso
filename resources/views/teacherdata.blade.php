@@ -7,7 +7,7 @@
 @section('content')
 <h1>Személyes adatok</h1>
 <div class="container-fluid teachdata">
-	<h5> 
+	<h5>
 		@isset($user)
 			{{$user->name}}
 		@endisset
@@ -126,7 +126,7 @@
 		</div>
 		<div class="row my-2">
 			<div class="col form-check ms-3">
-				<a href="">Adatvédelmi szabályzat<br></a>
+				<a href="{{route('gdprPage')}}">Adatvédelmi szabályzat<br>a>
 				<input class="form-check-input" type="checkbox" id="gdpr" required>
 				<label class="form-check-label py-2" for="gdpr">
 					Elolvastam és elfogadom az adatvédelmi szabályzatot.
