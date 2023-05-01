@@ -59,15 +59,18 @@
 }
 
 .login-form input, .login-form textarea, .registration-container input, .changedata-container input, .registration-container select {
-    width: 20rem;
+    width: 90%;
     display: block;
     margin: 0.3em auto;
     padding: 0.35em 0.8em;
     border-radius: 50px;
+    border: solid thin #a4a4a4;
 }
 
-.login-form textarea {
-    border-radius: 25px;
+.contacts-container textarea {
+    margin: 0.3em auto;
+    padding: 0.35em 0.8em;
+    border-radius: 20px;
     height: 8em;
 }
 
@@ -177,23 +180,12 @@ optgroup::before {
     display: none;
 }
 
+textarea {
+  resize: none;
+}
+
 @media screen and (max-width: 375px) {
     .login-main-container, .registration-container {
         width: 97%;
     }
-}
-
-@media screen and (max-width: 550px) {
-}
-
-@media screen and (max-width: 768px) {
-}
-
-@media screen and (max-width: 1024px) {
-}
-
-@media screen and (max-width: 1366px) {
-}
-
-@media screen and (max-width: 1600px) {
 }

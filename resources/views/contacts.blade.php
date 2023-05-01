@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 @endsection
 @section('content')
-<div class="container kapcsolat">
+<div class="container contacts">
     <div class="contacts-container">
 		<div class="input-container">
 			<form method="post" action="{{route('sendEmail')}}" class="login-form">
 				@csrf
 				<div class="form-title">Kapcsolat
 				</div>
-				<div class="container adat">
+				<div class="container data-container">
 					<div class="messages">
 						@if ($errors->any())
 							Hiba történt a regisztráció közben!
@@ -38,8 +38,8 @@
 	</div>
 	<div class="flexbox">
 		<div class="row">
-			<div class="elerhetoseg col">
-				<p class="pElerhetoseg">Elérhetőségek</p>
+			<div class="contact_details col">
+				<p>Elérhetőségek</p>
 				<hr>
 				<span class="material-icons">
 					phone

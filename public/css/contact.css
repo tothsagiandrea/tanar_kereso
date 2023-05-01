@@ -1,20 +1,25 @@
-.kapcsolat
-{
-    max-width: 100%;
+.contacts, .container.contacts {
+    width: 100%;
+    max-width: unset;
 }
-.elerhetoseg {
+
+.contact_details, .contact_details.col  {
     background-color: aliceblue;
     width: 100% !important;
     text-align: center;
     margin: 0 !important;
     padding: 0 !important;
 }
-.input-container
-{
+
+.flexbox {
+    width: 100% !important;
+}
+
+.input-container {
     min-width:80% ;
 }
-.adat
-{
+
+.data-container {
     min-width: 50%;
 }
 .col {
@@ -22,12 +27,12 @@
     padding: 0 !important;
 }
 
-.pElerhetoseg {
+.contact_details p {
     font-size: 20px;
     margin-top: 30px;
 }
-.form-title
-{
+
+.form-title {
    min-width:60%;
 }
 
@@ -37,174 +42,8 @@
     max-width: 800px;
 }
 
-
-@media screen and (max-width: 375px) {
-}
-
 @media screen and (max-width: 550px) {
     .g-maps {
         height: 400px;
     }
-}
-
-@media screen and (max-width: 768px) {
-}
-
-@media screen and (max-width: 1024px) {
-}
-
-@media screen and (max-width: 1366px) {
-}
-
-@media screen and (max-width: 1600px) {
-}
-.login-main-container, .registration-container {
-    margin: 25px auto;
-    padding: 0;
-    max-width: 500px;
-    width: 100%;
-    height: 672px;
-    border: thin solid black;
-    border-radius: 25px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
-    background-color:#2d1e78;
-    background: url('../img/regablak.png');
-}
-
-.registration-container {
-    height: 792px;
-}
-
-.input-container {
-    max-width: 500px;
-    width: 100%;
-    height: 370px;
-    margin-top: 300px;
-    background-color: white;
-    border-radius: 50% 0 25px 25px;
-    padding: 45px 15px;
-}
-
-.registration-container .input-container {
-    height: 490px;
-}
-
-.form-title {
-    text-align: center;
-    display: block;
-    color: rgb(6, 81, 119);
-    font-size: 2em;
-    text-transform: uppercase;
-    font-weight: 600;
-    text-shadow: 2px 2px 0px #6661837e;
-}
-
-.login-form input, .registration-container input, .registration-container select {
-    width: 80%;
-    display: block;
-    margin: 0.3em auto;
-    padding: 0.35em 0.8em;
-    border-radius: 50px;
-    border-color: black;
-}
-
-.login-form textarea {
-    width: 80%;
-    display: block;
-    margin: 0.3em auto;
-    padding: 0.35em 0.8em;
-    border-radius: 20px;
-    border-color: black;
-}
-
-.login-form label {
-    display: initial;
-    width: 80%;
-    margin: 0;
-}
-
-.login-form a, .registration-container a {
-    display: initial;
-    width: fit-content;
-    margin: 0.7em 0;
-}
-
-.login-form .row, .registration-container .row {
-    justify-content: center;
-    align-items: center;
-}
-
-.login-form input[type="checkbox"] {
-    display: initial;
-    width: fit-content;
-    height: fit-content;
-    margin: 0.5em;
-}
-
-.login-form input[type="submit"], .registration-container input[type="submit"] {
-    display: initial;
-    width: fit-content;
-    height: fit-content;
-    margin: 0.5em;
-    padding: 0.5em 1em;
-}
-
-option[value=""][disabled] {
-    display: none;
-}
-
-.message_container {
-    width: 97%;
-    max-width: 600px;
-    background-color: #fff;
-    color: #292b2e;
-    text-align: center;
-    margin: 2em auto;
-    padding: 1em;
-}
-
-select[multiple] {
-    height: 12em;
-}
-
-/*optgroup > * {
-    display: none;
-    background-color: rgb(213, 235, 243);
-    position: relative;
-}
-
-optgroup::before {
-    width: fit-content;
-    position: relative;
-    content: '\2227 ';
-}*/
-
-.checkbox_container {
-    width: 100%;
-    padding: 0.3em 1em;
-    border-radius: 5px;
-    background-color: white;
-    display: flex;
-    gap: 1em;
-}
-
-@media screen and (max-width: 375px) {
-    .login-main-container, .registration-container {
-        width: 97%;
-    }
-}
-
-@media screen and (max-width: 550px) {
-}
-
-@media screen and (max-width: 768px) {
-}
-
-@media screen and (max-width: 1024px) {
-}
-
-@media screen and (max-width: 1366px) {
-}
-
-@media screen and (max-width: 1600px) {
 }
