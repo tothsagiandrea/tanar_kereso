@@ -2,7 +2,7 @@ $( document ).ready(function(){
     $('div.row.my-2.location-row').css('display', "none");
     $('select#location').attr('disabled', true);
 
-    $('select#lesson_type').bind('change', function () {
+    $.fn.toggleLocationSelect = function() {
         if ($('select#lesson_type option:selected').text() == 'online') {
             $('div.row.my-2.location-row').css('display', "none");
             $('select#location').attr('disabled', true);
@@ -10,7 +10,13 @@ $( document ).ready(function(){
             $('div.row.my-2.location-row').css('display', "flex");
             $('select#location').attr('disabled', false);
         }
+    }
+
+    $('select#lesson_type').bind('change', function () {
+        $.fn.toggleLocationSelect();
     });
+
+    $.fn.toggleLocationSelect();
 
     $('form#teacher_data_form').on('submit', function () {
     
@@ -42,7 +48,7 @@ $( document ).ready(function(){
         return validated;
     });
 
-    $.fn.resetFilter = function(){
+    $.fn.resetFilter = function() {
         $('.filter-container').css('overflow', 'hidden');
         $('.filter-container').css('height', '55px');
         $('.filter-close').css('display', 'none');

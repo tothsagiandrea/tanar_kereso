@@ -17,6 +17,7 @@ class Teacher extends Model
         'hourly_rate',
         'profile_pic_path',
         'profile_video_path',
+        'qualification_id',
         'user_id'
     ];
 
@@ -30,10 +31,6 @@ class Teacher extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function grade_subjects():BelongsToMany {
-        return $this->belongsToMany(GradeSubject::class, 'grade_subject_teacher', 'teacher_id', 'grade_subject_id')->withPivot(['grade_subject_id'])->using(GradeSubjectTeacher::class);
-    }
-
     public function qualification():BelongsTo {
         return $this->belongsTo(Qualification::class);
     }
@@ -44,5 +41,9 @@ class Teacher extends Model
 
     public function towns():BelongsToMany {
         return $this->belongsToMany(Town::class);
+    }
+
+    public function grade_subjects():BelongsToMany {
+        return $this->belongsToMany(GradeSubject::class, 'grade_subject_teacher', 'teacher_id', 'grade_subject_id')->withPivot(['grade_subject_id'])->using(GradeSubjectTeacher::class);
     }
 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->smallInteger('hourly_rate');
             $table->string('profile_pic_path', 500)->nullable();
             $table->string('profile_video_path', 500)->nullable();
+            $table->foreignId('qualification_id')->references('id')->on('qualifications')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
 

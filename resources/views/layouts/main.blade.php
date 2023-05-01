@@ -27,7 +27,7 @@
                         <li class="nav-item"><a class="nav-link" href="{{route('indexPage')}}">Tanárok</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('servicesPage')}}">Információk</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('contactsPage')}}">Kapcsolat</a></li>
-                        {{-- <li class="nav-item"><a class="nav-link" href="{{route('forumPage')}}">Fórum</a></li> --}}
+                        <li class="nav-item"><a class="nav-link" href="{{route('forumPage')}}">Fórum</a></li>
                         @guest
                         <li class="nav-item"><a class="nav-link" href="{{route('loginPage')}}">Bejelentkezés</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('registrationPage')}}">Regisztráció</a></li>

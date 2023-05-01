@@ -1,11 +1,12 @@
 @extends('layouts.main')
 @section('styles')
     <link rel="stylesheet" href="{{asset('css/contact.css')}}">
+	<link rel="stylesheet" href="{{asset('css/forms.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 @endsection
 @section('content')
 <div class="container kapcsolat">
-    <div class="login-main-container">
+    <div class="contacts-container">
 		<div class="input-container">
 			<form method="post" action="{{route('sendEmail')}}" class="login-form">
 				@csrf
@@ -22,7 +23,7 @@
 					<input type="name" placeholder="Név" name="name" required>
 					<input type="email" placeholder="E-mail cím" name="email" required>
                     <textarea required class="form-control" id="message" name="message" placeholder="Üzenet"></textarea>
-					<div class="row">
+					<div class="row imnotarobot">
 						<input type="checkbox" name="imnotrobot" id="imnotrobot">
 						<label for="imnotrobot">Nem vagyok robot!</label>
 					</div>

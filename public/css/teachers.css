@@ -262,6 +262,7 @@ option[value=""][disabled] {
     flex-direction: column;
     gap: 0.6em;
     justify-content: start;
+    min-width: 250px;
 }
 
 .teacher-contacts {
@@ -324,6 +325,7 @@ ul.subject-grades {
 .teacher-cv {
     margin: 1.2em 0 0 0;
     padding: 0;
+    max-width: 650px;
 }
 
 .button-container {

@@ -3,23 +3,21 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactEmail;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use Psy\Readline\Hoa\Console;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 
 use App\Http\Controllers\TeacherController;
 
 use App\Models\Grade;
-use App\Models\GradeSubject;
-use App\Models\GradeSubjectTeacher;
 use App\Models\LessonType;
 use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\Town;
-use Illuminate\Support\Facades\Redirect;
+
+use App\Models\ForumPost;
+use App\Models\ForumTopic;
 
 /**
  * Summary of RouteController
@@ -41,10 +39,6 @@ class RouteController extends Controller
 
     public function showServices () : View {
         return view('services');
-    }
-
-    public function showForum () : View {
-        return view('forum');
     }
 
     public function showTeacherDataPage () : View {

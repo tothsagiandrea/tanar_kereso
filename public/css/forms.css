@@ -1,6 +1,6 @@
 /* LOGIN FORM */
 
-.login-main-container, .registration-container, .changedata-container {
+.login-main-container, .registration-container, .changedata-container, .contacts-container {
     margin: 25px auto;
     padding: 0;
     max-width: 500px;
@@ -21,6 +21,10 @@
     height: 842px;
 }
 
+.contacts-container {
+    height: 767px;
+}
+
 .input-container {
     max-width: 500px;
     width: 100%;
@@ -39,6 +43,10 @@
     height: 540px;
 }
 
+.contacts-container .input-container {
+    height: 465px;
+}
+
 .form-title {
     text-align: center;
     display: block;
@@ -50,12 +58,17 @@
     text-shadow: 3px 3px 0px #6661837e;
 }
 
-.login-form input, .registration-container input, .changedata-container input, .registration-container select {
+.login-form input, .login-form textarea, .registration-container input, .changedata-container input, .registration-container select {
     width: 20rem;
     display: block;
     margin: 0.3em auto;
     padding: 0.35em 0.8em;
     border-radius: 50px;
+}
+
+.login-form textarea {
+    border-radius: 25px;
+    height: 8em;
 }
 
 .login-form label {
@@ -103,6 +116,13 @@ select option {
     height: 6em;
 }
 
+.imnotarobot {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .message_container {
     width: 97%;
     max-width: 600px;
@@ -136,6 +156,21 @@ optgroup::before {
     background-color: white;
     display: flex;
     gap: 1em;
+}
+
+.gdpr_consent {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+    margin: 1em 0;
+}
+
+.gdpr_consent label {
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
 }
 
 .form_messages {
