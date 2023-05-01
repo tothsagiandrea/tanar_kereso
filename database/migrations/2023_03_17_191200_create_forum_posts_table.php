@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('forum_posts', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('sn_number');
             $table->text('post');
             $table->bigInteger('answer_to')->nullable();
             $table->foreignId('topic_id')->references('id')->on('forum_topics')->onUpdate('cascade')->onDelete('cascade');

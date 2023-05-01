@@ -27,6 +27,9 @@ Route::get('/gdpr', [RouteController::class, 'showGdpr'])->name('gdprPage');
 Route::post('/sendemail', [RouteController::class, 'sendEmail'])->name('sendEmail');
 Route::post('/filterteacher', [TeacherController::class, 'showFilteredTeacherPage'])->name('filteredTeacherPage');
 Route::get('/forumtopic/{id}', [ForumController::class, 'showForumTopicPage'])->name('forumTopicPage');
+Route::post('/forumpost', [ForumController::class, 'postForum'])->name('forumPost');
+Route::get('/answerforumpost/{id}', [ForumController::class, 'showAnswerForumPost'])->name('showAnswerForumPost');
+
 
 
 Route::post('/login', [UserAuthController::class, 'loginUser'])->name('loginUser');
